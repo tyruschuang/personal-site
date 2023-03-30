@@ -20,7 +20,10 @@ function Footer() {
               <Link to="/">Projects</Link>
             </li>
             <li>
-              <Link to="/">Blog</Link>
+              <Link to="/">Skills</Link>
+            </li>
+            <li>
+              <Link to="/">Resume</Link>
             </li>
             <li>
               <Link to="/">Contact</Link>

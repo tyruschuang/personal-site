@@ -1,7 +1,8 @@
 import React from "react";
-import "./About.css";
+import "./Home.css";
+import Constants from "../../Constants.json";
 
-function About() {
+function Home() {
   return (
     <div className="about-container">
       <div className="about-header">
@@ -11,10 +12,7 @@ function About() {
         <div className="about-section">
           <h3>My Story</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis
-            eget neque sit amet scelerisque. Sed ac odio eget magna bibendum laoreet
-            vitae quis neque. Fusce id lorem id sapien imperdiet pellentesque. Nam
-            semper sapien vitae ante consectetur, vel molestie sapien ultrices.
+            {Constants.pages.about.blurb}
           </p>
         </div>
         <div className="about-section">
@@ -40,4 +38,4 @@ function About() {
   );
 }
 
-export default About;
+export default Home;
