@@ -3,6 +3,7 @@ import "./Home.css";
 import Constants from "../../Constants.json";
 
 function Home() {
+  const blurb = Constants.pages.about.blurb;
   return (
     <div className="about-container">
       <div className="about-header">
@@ -12,7 +13,7 @@ function Home() {
         <div className="about-section">
           <h3>My Story</h3>
           <p>
-            {Constants.pages.about.blurb}
+            {blurb}
           </p>
         </div>
         <div className="about-section">
