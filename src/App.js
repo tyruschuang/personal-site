@@ -1,9 +1,8 @@
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import About from './components/about/About';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
-import About from './components/about/About';
-import Layout from './components/Layout';
 
 function App() {
   return (
@@ -11,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Outlet />}>
             <Route index element={<About />} />
             <Route path="/about" element={<About />} />
             <Route path="/skills" element={<About />} />

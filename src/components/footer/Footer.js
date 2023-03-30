@@ -31,12 +31,12 @@ function Footer() {
           <h2>Social</h2>
           <ul>
             <li>
-              <a href="#">
+              <a href="https://twitter.com/omgabuilds" target="_blank" rel="noreferrer">
                 <i className="fa fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="https://github.com/omegaladon" target="_blank" rel="noreferrer">
                 <i className="fa fa-github"></i>
               </a>
             </li>
