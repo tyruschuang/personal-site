@@ -10,37 +10,57 @@ const moveForever = keyframes`
 `;
 
 const WavesStyle = styled.div`
+  overflow: hidden;
   position: absolute;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  bottom: 0;
 
-  .parallax > use {
-    animation: ${moveForever} 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-  }
+  .waves {
+    position: absolute;
+    width: 100%;
+    height: 38vh;
+    bottom: 0;
+    left: 0;
+    fill: #fff;
 
-  .parallax > use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
-  }
+    .parallax > use {
+      animation: ${moveForever} 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+    }
 
-  .parallax > use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-  }
+    .parallax > use:nth-child(1) {
+      animation-delay: -2s;
+      animation-duration: 7s;
+    }
 
-  .parallax > use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-  }
+    .parallax > use:nth-child(2) {
+      animation-delay: -3s;
+      animation-duration: 10s;
+    }
 
-  .parallax > use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
+    .parallax > use:nth-child(3) {
+      animation-delay: -4s;
+      animation-duration: 13s;
+    }
+
+    .parallax > use:nth-child(4) {
+      animation-delay: -5s;
+      animation-duration: 20s;
+    }
   }
 
   @media (max-width: 768px) {
-    height: 40px;
-    min-height: 40px;
+    .waves {
+      width: 200%;
+      height: 30vh;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .waves {
+      width: 250%;
+      height: 45vh;
+    }
   }
 `;
 

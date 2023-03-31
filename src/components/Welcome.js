@@ -3,23 +3,24 @@ import styled from "styled-components";
 import Waves from "./Waves";
 
 const TextContainer = styled.div`
-  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+  background: linear-gradient(60deg, #736EFE 0%, #ABDCFF 100%);
   background-size: cover;
   color: #fff;
-  height: 95vh;
+  height: auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 4rem;
 
   @media (max-width: 768px) {
-    height: auto;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding: 2rem;
   }
 `;
 
 const Text = styled.h1`
+  z-index: 1;
   font-size: 3rem;
   margin-top: -15rem;
   text-align: center;
@@ -32,9 +33,9 @@ const Text = styled.h1`
 `;
 
 const Typewriter = styled.span`
-  color: #00bfff;
+  color: #3677FF;
   overflow: hidden;
-  border-right: 0.15em solid #00bfff;
+  border-right: 0.15em solid #3677FF;
   white-space: nowrap;
   letter-spacing: 0.15em;
   animation: typing 1.5s steps(30, end), blink-caret 0.75s step-end infinite;
@@ -56,7 +57,7 @@ const Typewriter = styled.span`
       border-color: transparent;
     }
     50% {
-      border-color: #00bfff;
+      border-color: #3677FF;
     }
   }
 
