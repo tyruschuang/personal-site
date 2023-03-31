@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import Waves from "./Waves";
 
-const Container = styled.div`
-  background-image: url("https://www.example.com/dark-image.jpg");
+const TextContainer = styled.div`
+  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
   background-size: cover;
   color: #fff;
-  height: 100vh;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,12 +70,20 @@ const TypewriterText = styled.span`
   display: block;
 `;
 
+const Container = styled.div`
+  background-color: #f9f9f9;
+  height: 100%;
+  width: 100%;
+  position: relative;
+`;
+
+const words = ["a high school student", "a web developer", "a programmer", "a gamer", "a student", "a robotics kid"];
+
 export default function Welcome() {
   const [text, setText] = useState("");
-  const [index, setIndex] = useState(0);
+  const [, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [delay, setDelay] = useState(100);
-  const words = ["a high school student", "a web developer", "a programmer", "a gamer", "a student", "a robotics kid"];
 
   useEffect(() => {
     let raf;
@@ -108,16 +117,19 @@ export default function Welcome() {
     };
     raf = requestAnimationFrame(step);
     return () => cancelAnimationFrame(raf);
-  }, [delay, isDeleting, text, words]);
+  }, [delay, isDeleting, text]);
 
   return (
     <Container>
-      <Text>
-        Hey! My name is Tyrus. I'm...
-        <TypewriterText>
-          <Typewriter>{text}</Typewriter>
-        </TypewriterText>
-      </Text>
+      <Waves />
+      <TextContainer>
+        <Text>
+          Hey! My name is Tyrus. I'm...
+          <TypewriterText>
+            <Typewriter>{text}</Typewriter>
+          </TypewriterText>
+        </Text>
+      </TextContainer>
     </Container>
   );
 };
