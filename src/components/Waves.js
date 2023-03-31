@@ -19,7 +19,7 @@ const WavesStyle = styled.div`
   .waves {
     position: absolute;
     width: 100%;
-    height: 38vh;
+    height: 44vh;
     bottom: 0;
     left: 0;
     fill: #fff;
@@ -29,37 +29,37 @@ const WavesStyle = styled.div`
     }
 
     .parallax > use:nth-child(1) {
-      animation-delay: -2s;
-      animation-duration: 7s;
-    }
-
-    .parallax > use:nth-child(2) {
-      animation-delay: -3s;
+      animation-delay: -4s;
       animation-duration: 10s;
     }
 
+    .parallax > use:nth-child(2) {
+      animation-delay: -6s;
+      animation-duration: 15s;
+    }
+
     .parallax > use:nth-child(3) {
-      animation-delay: -4s;
-      animation-duration: 13s;
+      animation-delay: -8s;
+      animation-duration: 20s;
     }
 
     .parallax > use:nth-child(4) {
-      animation-delay: -5s;
-      animation-duration: 20s;
+      animation-delay: -10s;
+      animation-duration: 25s;
     }
   }
 
   @media (max-width: 768px) {
     .waves {
       width: 200%;
-      height: 30vh;
+      height: 35vh;
     }
   }
 
   @media (max-width: 480px) {
     .waves {
       width: 250%;
-      height: 45vh;
+      height: 35vh;
     }
   }
 `;
@@ -75,7 +75,7 @@ export default function Waves() {
         className="waves"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28"
+        viewBox="0 24 150 32"
         preserveAspectRatio="none"
         style={svgStyle}
       >

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Waves from "./Waves";
+import { AiOutlineArrowDown } from "react-icons/ai";
 
 const TextContainer = styled.div`
   background: linear-gradient(60deg, #736EFE 0%, #ABDCFF 100%);
@@ -78,6 +79,27 @@ const Container = styled.div`
   position: relative;
 `;
 
+const Down = styled.div`
+  position: absolute;
+  bottom: 13vh;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  font-size: 2rem;
+  cursor: pointer;
+  animation: bounce 3s infinite;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+`;
+
 const words = ["a high school student", "a web developer", "a programmer", "a gamer", "a student", "a robotics kid"];
 
 export default function Welcome() {
@@ -120,6 +142,11 @@ export default function Welcome() {
     return () => cancelAnimationFrame(raf);
   }, [delay, isDeleting, text]);
 
+  const scrollToAbout = () => {
+    const element = document.getElementById("about-title");
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <Container>
       <Waves />
@@ -131,6 +158,9 @@ export default function Welcome() {
           </TypewriterText>
         </Text>
       </TextContainer>
+      <Down>
+        <AiOutlineArrowDown onClick={scrollToAbout}/>
+      </Down>
     </Container>
   );
 };

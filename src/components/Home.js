@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Welcome from "./Welcome";
-import { AiOutlineArrowDown } from "react-icons/ai";
 
 const Container = styled.div`
   display: flex;
@@ -65,7 +64,7 @@ export default function Home() {
     <Container>
       <Welcome />
       <Header>
-        <TitleText>About Me</TitleText>
+        <TitleText id="about-title">About Me</TitleText>
       </Header>
       <Content>
         <Section>
