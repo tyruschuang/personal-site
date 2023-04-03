@@ -18,8 +18,8 @@ const FooterContent = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 3rem;
-  padding-right: 25rem;
-  padding-left: 35rem;
+  padding-right: 25%;
+  padding-left: 25%;
 `;
 
 const FooterSection = styled.div`
@@ -132,14 +132,6 @@ export default function Footer() {
     <FooterWrapper>
       <FooterContent>
         <FooterSection>
-          <SectionHeader>About</SectionHeader>
-          <SectionContent>
-            <SectionText>
-              High school student doing high school things.
-            </SectionText>
-          </SectionContent>
-        </FooterSection>
-        <FooterSection>
           <SectionHeader>Links</SectionHeader>
           <SectionContent>
             <LinksList>
@@ -159,6 +151,14 @@ export default function Footer() {
                 <LinkStyled to="/contact">Contact</LinkStyled>
               </LinksListItem>
             </LinksList>
+          </SectionContent>
+        </FooterSection>
+        <FooterSection>
+          <SectionHeader>About</SectionHeader>
+          <SectionContent>
+            <SectionText>
+              High school student doing high school things.
+            </SectionText>
           </SectionContent>
         </FooterSection>
         <FooterSection>
