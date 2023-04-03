@@ -50,8 +50,6 @@ const NavLink = styled(Link)`
   position: relative;
   padding-bottom: 3px;
   transition: color 0.1s ease-in-out;
-  border-right: 1px solid #eee;
-  border-left: 1px solid #eee;
 
   &:after {
     content: "";

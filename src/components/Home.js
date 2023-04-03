@@ -71,7 +71,7 @@ export default function Home() {
       <Content>
         <Section>
           <Title>My Story</Title>
-          <p>I'm a high school student currently in my junior year, and I have a passion for learning and exploring new things. My interests range from technology and computer science to digital art and robotics. I enjoy coding and building websites in my free time, and I also love to release my creativity in the form of digital art. When I'm not busy with school or my hobbies, you can usually find me hanging out with friends or playing video games. I'm excited to see where my passions take me in the future and to continue growing and learning along the way.</p>
+          <p>lorem ipsum</p>
         </Section>
         <Section>
           <Title>My Skills</Title>
@@ -85,10 +85,7 @@ export default function Home() {
         <Section>
           <Title>My Hobbies</Title>
           <List>
-            <ListItem>Reading</ListItem>
-            <ListItem>Hiking</ListItem>
-            <ListItem>Playing guitar</ListItem>
-            <ListItem>Watching movies</ListItem>
+            <ListItem>gaming</ListItem>
           </List>
         </Section>
       </Content>

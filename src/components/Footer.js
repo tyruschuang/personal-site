@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+import { AiOutlineTwitter, AiOutlineGithub } from "react-icons/ai";
+
 const FooterWrapper = styled.footer`
   background-color: #fbfbfb;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
   bottom: 0;
   width: 100%;
-  padding-left: 1rem;
   z-index: 100;
 `;
 
@@ -16,7 +17,9 @@ const FooterContent = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 3rem;
+  padding-right: 25rem;
+  padding-left: 35rem;
 `;
 
 const FooterSection = styled.div`
@@ -27,6 +30,12 @@ const FooterSection = styled.div`
 const SectionHeader = styled.h2`
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid #0077c2;
+`;
+
+const SectionContent = styled.div`
+  padding-left: 1.3rem;
 `;
 
 const SectionText = styled.p`
@@ -47,6 +56,26 @@ const LinksListItem = styled.li`
 const LinkStyled = styled(Link)`
   color: #333;
   text-decoration: none;
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.1s ease-in-out;
+
+  &:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: #0077c2;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.2s ease-in-out;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
 `;
 
 const SocialList = styled.ul`
@@ -63,15 +92,12 @@ const SocialListItem = styled.li`
 const SocialLink = styled.a`
   color: #333;
   text-decoration: none;
-  font-size: 1.5rem;
-`;
+  font-size: 2rem;
+  transition: all 0.3s ease;
 
-const SocialIcon = styled.i`
-  display: inline-block;
-  padding: 0.5rem;
-  background-color: #fff;
-  color: #333;
-  border-radius: 50%;
+  &:hover {
+    color: #0077c2;
+  }
 `;
 
 const BottomText = styled.p`
@@ -107,48 +133,54 @@ export default function Footer() {
       <FooterContent>
         <FooterSection>
           <SectionHeader>About</SectionHeader>
-          <SectionText>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </SectionText>
+          <SectionContent>
+            <SectionText>
+              High school student doing high school things.
+            </SectionText>
+          </SectionContent>
         </FooterSection>
         <FooterSection>
           <SectionHeader>Links</SectionHeader>
-          <LinksList>
-            <LinksListItem>
-              <LinkStyled to="/">Home</LinkStyled>
-            </LinksListItem>
-            <LinksListItem>
-              <LinkStyled to="/">Projects</LinkStyled>
-            </LinksListItem>
-            <LinksListItem>
-              <LinkStyled to="/">Skills</LinkStyled>
-            </LinksListItem>
-            <LinksListItem>
-              <LinkStyled to="/">Resume</LinkStyled>
-            </LinksListItem>
-            <LinksListItem>
-              <LinkStyled to="/">Contact</LinkStyled>
-            </LinksListItem>
-          </LinksList>
+          <SectionContent>
+            <LinksList>
+              <LinksListItem>
+                <LinkStyled to="/">Home</LinkStyled>
+              </LinksListItem>
+              <LinksListItem>
+                <LinkStyled to="/projects">Projects</LinkStyled>
+              </LinksListItem>
+              <LinksListItem>
+                <LinkStyled to="/skills">Skills</LinkStyled>
+              </LinksListItem>
+              <LinksListItem>
+                <LinkStyled to="/resume">Resume</LinkStyled>
+              </LinksListItem>
+              <LinksListItem>
+                <LinkStyled to="/contact">Contact</LinkStyled>
+              </LinksListItem>
+            </LinksList>
+          </SectionContent>
         </FooterSection>
         <FooterSection>
           <SectionHeader>Social</SectionHeader>
-          <SocialList>
-            <SocialListItem>
-              <SocialLink href="https://twitter.com/omgabuilds" target="_blank" rel="noreferrer">
-                <SocialIcon className="fa fa-twitter"></SocialIcon>
-              </SocialLink>
-            </SocialListItem>
-            <SocialListItem>
-              <SocialLink href="https://github.com/omegaladon" target="_blank" rel="noreferrer">
-                <SocialIcon className="fa fa-github"></SocialIcon>
-              </SocialLink>
-            </SocialListItem>
-          </SocialList>
+          <SectionContent>
+            <SocialList>
+              <SocialListItem>
+                <SocialLink href="https://twitter.com/omgabuilds" target="_blank" rel="noreferrer">
+                  <AiOutlineTwitter />
+                </SocialLink>
+              </SocialListItem>
+              <SocialListItem>
+                <SocialLink href="https://github.com/omegaladon" target="_blank" rel="noreferrer">
+                  <AiOutlineGithub />
+                </SocialLink>
+              </SocialListItem>
+            </SocialList>
+          </SectionContent>
         </FooterSection>
       </FooterContent>
       <BottomText>
-        &copy; 2023 Tyrus Chuang | Designed by Tyrus Chuang
+        &copy; 2023 | Designed by Tyrus Chuang
         <ViewSourceBtn href="https://github.com/omegaladon/personal-site" target="_blank" rel="noreferrer">View Source</ViewSourceBtn>
       </BottomText>
     </FooterWrapper>
