@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+import logo from '../images/logo.png';
 import './Hamburger.js';
 import Hamburger from "./Hamburger.js";
 
@@ -17,7 +18,7 @@ const HeaderContainer = styled.header`
 
 const Nav = styled.nav`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
   font-size: 1.2rem;
@@ -94,6 +95,12 @@ const HamburgerLink = styled(Link)`
   }
 `;
 
+const Logo = styled.img`
+  display: block;
+  max-height: 40px;
+  margin-right: 10px;
+`;
+
 export default function Header() {
   
   const [activeLink, setActiveLink] = useState("Home");
@@ -105,6 +112,7 @@ export default function Header() {
   return (
     <HeaderContainer>
       <Nav>
+        <Logo src={logo} alt="Logo" />
         <Hamburger>
           <HamburgerLink
             to="/"
