@@ -100,7 +100,7 @@ const Down = styled.div`
   }
 `;
 
-const words = ["a high school student", "a web developer", "a programmer", "a gamer", "a student", "a robotics kid"];
+const words = ["a high school student", "a web developer", "a programmer", "a gamer", "a robotics kid"];
 
 export default function Welcome() {
   const [text, setText] = useState("");
