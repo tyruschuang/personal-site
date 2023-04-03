@@ -82,9 +82,9 @@ const Container = styled.div`
 const Down = styled.div`
   position: absolute;
   bottom: 13vh;
-  left: 50%;
-  transform: translateX(-50%);
   color: #444;
+  left: calc(50% - 1rem);
+  transform: translateX(calc(-50% + 1rem));
   font-size: 2rem;
   cursor: pointer;
   animation: bounce 3s infinite;
@@ -144,7 +144,12 @@ export default function Welcome() {
 
   const scrollToAbout = () => {
     const element = document.getElementById("about-title");
-    element.scrollIntoView({ behavior: "smooth" });
+    element.scrollIntoView({ 
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+      offset: -100
+    });
   }
 
   return (

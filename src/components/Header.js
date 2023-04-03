@@ -97,6 +97,10 @@ const HamburgerLink = styled(Link)`
   }
 `;
 
+const LogoLink = styled(Link)`
+  z-index: 200;
+`;
+
 const Logo = styled.img`
   width: 60px;
   max-height: 60px;
@@ -115,9 +119,9 @@ export default function Header() {
   return (
     <HeaderContainer>
       <Nav>
-        <Link to="/" onClick={() => handleLinkClick("Home")}>
+        <LogoLink to="/" onClick={() => handleLinkClick("Home")}>
           <Logo src={logo} alt="Logo" />
-        </Link>
+        </LogoLink>
         <Hamburger>
           <HamburgerLink
             to="/"
