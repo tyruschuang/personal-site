@@ -50,6 +50,8 @@ const NavLink = styled(Link)`
   position: relative;
   padding-bottom: 3px;
   transition: color 0.1s ease-in-out;
+  border-right: 1px solid #eee;
+  border-left: 1px solid #eee;
 
   &:after {
     content: "";
@@ -96,9 +98,10 @@ const HamburgerLink = styled(Link)`
 `;
 
 const Logo = styled.img`
-  display: block;
-  max-height: 40px;
-  margin-right: 10px;
+  width: 60px;
+  max-height: 60px;
+  height: auto;
+  cursor: pointer;
 `;
 
 export default function Header() {
@@ -112,7 +115,9 @@ export default function Header() {
   return (
     <HeaderContainer>
       <Nav>
-        <Logo src={logo} alt="Logo" />
+        <Link to="/" onClick={() => handleLinkClick("Home")}>
+          <Logo src={logo} alt="Logo" />
+        </Link>
         <Hamburger>
           <HamburgerLink
             to="/"
