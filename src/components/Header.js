@@ -45,7 +45,7 @@ const Li = styled.li`
 `;
 
 const NavLink = styled(Link)`
-  color: ${(props) => (props.active ? "#0077c2" : "#333")};
+  color: ${(props) => (props.active === 'true' ? "#0077c2" : "#333")};
   text-decoration: none;
   position: relative;
   padding-bottom: 3px;
@@ -71,7 +71,7 @@ const NavLink = styled(Link)`
   }
 
   ${(props) =>
-    props.active &&
+    props.active === 'true' &&
     `
     &:after {
       width: 100%;
@@ -80,8 +80,8 @@ const NavLink = styled(Link)`
 `;
 
 const HamburgerLink = styled(Link)`
-  color: ${(props) => (props.active ? "#0077c2" : "#333")};
-  text-decoration: ${(props) => (props.active ? "underline" : "none")};
+  color: ${(props) => (props.active === 'true' ? "#0077c2" : "#333")};
+  text-decoration: ${(props) => (props.active === 'true' ? "underline" : "none")};
   text-underline-offset: 6px;
   text-decoration-thickness: 2px;
   font-size: 18px;
@@ -126,35 +126,35 @@ export default function Header() {
           <HamburgerLink
             to="/"
             onClick={() => handleLinkClick("Home")}
-            active={activeLink === "Home"}
+            active={`${activeLink === "Home"}`}
           >
             Home
           </HamburgerLink>
           <HamburgerLink
             to="/skills"
             onClick={() => handleLinkClick("Skills")}
-            active={activeLink === "Skills"}
+            active={`${activeLink === "Skills"}`}
           >
             Skills
           </HamburgerLink>
           <HamburgerLink
             to="/projects"
             onClick={() => handleLinkClick("Projects")}
-            active={activeLink === "Projects"}
+            active={`${activeLink === "Projects"}`}
           >
             Projects
           </HamburgerLink>
           <HamburgerLink
             to="/resume"
             onClick={() => handleLinkClick("Resume")}
-            active={activeLink === "Resume"}
+            active={`${activeLink === "Resume"}`}
           >
             Resume
           </HamburgerLink>
           <HamburgerLink
             to="/contact"
             onClick={() => handleLinkClick("Contact")}
-            active={activeLink === "Contact"}
+            active={`${activeLink === "Contact"}`}
           >
             Contact
           </HamburgerLink>
@@ -164,7 +164,7 @@ export default function Header() {
             <NavLink
               to="/"
               onClick={() => handleLinkClick("Home")}
-              active={activeLink === "Home"}
+              active={`${activeLink === "Home"}`}
             >
               Home
             </NavLink>
@@ -173,7 +173,7 @@ export default function Header() {
             <NavLink
               to="/skills"
               onClick={() => handleLinkClick("Skills")}
-              active={activeLink === "Skills"}
+              active={`${activeLink === "Skills"}`}
             >
               Skills
             </NavLink>
@@ -182,7 +182,7 @@ export default function Header() {
             <NavLink
               to="/projects"
               onClick={() => handleLinkClick("Projects")}
-              active={activeLink === "Projects"}
+              active={`${activeLink === "Projects"}`}
             >
               Projects
             </NavLink>
@@ -191,7 +191,7 @@ export default function Header() {
             <NavLink
               to="/resume"
               onClick={() => handleLinkClick("Resume")}
-              active={activeLink === "Resume"}
+              active={`${activeLink === "Resume"}`}
             >
               Resume
             </NavLink>
@@ -200,7 +200,7 @@ export default function Header() {
             <NavLink
               to="/contact"
               onClick={() => handleLinkClick("Contact")}
-              active={activeLink === "Contact"}
+              active={`${activeLink === "Contact"}`}
             >
               Contact
             </NavLink>
