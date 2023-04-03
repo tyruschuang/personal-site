@@ -80,6 +80,27 @@ const BottomText = styled.p`
   padding: 1rem;
 `;
 
+const ViewSourceBtn = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border: 1px solid #333;
+  color: #333;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-left: 3rem;
+  vertical-align: middle;
+  
+  &:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+  }
+`;
+
 export default function Footer() {
   return (
     <FooterWrapper>
@@ -126,7 +147,10 @@ export default function Footer() {
           </SocialList>
         </FooterSection>
       </FooterContent>
-      <BottomText>&copy; 2023 Tyrus Chuang | Designed by Tyrus Chuang</BottomText>
+      <BottomText>
+        &copy; 2023 Tyrus Chuang | Designed by Tyrus Chuang
+        <ViewSourceBtn href="https://github.com/omegaladon/personal-site" target="_blank" rel="noreferrer">View Source</ViewSourceBtn>
+      </BottomText>
     </FooterWrapper>
   );
 }
