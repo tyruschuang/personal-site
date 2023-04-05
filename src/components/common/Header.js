@@ -8,7 +8,7 @@ import Hamburger from "./Hamburger.js";
 
 const HeaderContainer = styled.header`
   background-color: ${props => props.theme.colors.primary};
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
   left: 0;
@@ -95,17 +95,6 @@ const HamburgerLink = styled(Link)`
   }
 `;
 
-const LogoLink = styled(Link)`
-  z-index: 200;
-`;
-
-const Logo = styled.img`
-  width: 60px;
-  max-height: 60px;
-  height: auto;
-  cursor: pointer;
-`;
-
 export default function Header() {
   
   const [activeLink, setActiveLink] = useState("Home");
@@ -117,9 +106,6 @@ export default function Header() {
   return (
     <HeaderContainer>
       <Nav>
-        <LogoLink to="/" onClick={() => handleLinkClick("Home")}>
-          <Logo src={logo} alt="Logo" />
-        </LogoLink>
         <Hamburger>
           <HamburgerLink
             to="/"

@@ -174,7 +174,7 @@ export default function Footer() {
           </SectionContent>
         </FooterSection>
         <FooterSection>
-          <SectionHeader>Links</SectionHeader>
+          <SectionHeader>Link</SectionHeader>
           <SectionContent>
             <LinksList>
               <LinksListItem>
