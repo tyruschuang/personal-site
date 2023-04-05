@@ -1,5 +1,5 @@
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
-import { ThemeProvider, themeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import './App.css';
 import Home from './components/Home';
 import Footer from './components/Footer';
