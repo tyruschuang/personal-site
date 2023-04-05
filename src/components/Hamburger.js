@@ -31,7 +31,7 @@ const MenuIcon = styled.div`
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #333;
+    background: ${props => props.theme.colors.opposite};
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -63,7 +63,7 @@ const Menu = styled.div`
   left: 0;
   width: 100%;
   padding: 20px;
-  background-color: #fff;
+  background-color: ${props => props.theme.colors.primary};
   box-shadow: 0 24px 16px rgba(0, 0, 0, 0.1);
   transition: all ${({ open }) => (open ? '0.4s cubic-bezier(0.2, 1, 0.265, 1)' : '0.4s ease-out')};
   transform: translateY(${({ open }) => (open ? '0' : '-100%')});

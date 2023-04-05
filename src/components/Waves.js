@@ -22,7 +22,6 @@ const WavesStyle = styled.div`
     height: 44vh;
     bottom: 0;
     left: 0;
-    fill: #fff;
 
     .parallax > use {
       animation: ${moveForever} 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;

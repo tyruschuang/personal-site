@@ -4,9 +4,9 @@ import Waves from "./Waves";
 import { AiOutlineArrowDown } from "react-icons/ai";
 
 const TextContainer = styled.div`
-  background: linear-gradient(60deg, #736EFE 0%, #ABDCFF 100%);
+  background: linear-gradient(60deg, ${props => props.theme.home.wave1} 0%, ${props => props.theme.home.wave2} 100%);
   background-size: cover;
-  color: #fff;
+  color: ${props => props.theme.colors.primary};
   height: auto;
   min-height: 100vh;
   display: flex;
@@ -34,9 +34,9 @@ const Text = styled.h1`
 `;
 
 const Typewriter = styled.span`
-  color: #3677FF;
+  color: ${props => props.theme.home.typewriter};
   overflow: hidden;
-  border-right: 0.15em solid #3677FF;
+  border-right: 0.15em solid ${props => props.theme.home.typewriter};
   white-space: nowrap;
   letter-spacing: 0.15em;
   animation: typing 1.5s steps(30, end), blink-caret 0.75s step-end infinite;
@@ -58,7 +58,7 @@ const Typewriter = styled.span`
       border-color: transparent;
     }
     50% {
-      border-color: #3677FF;
+      border-color: ${props => props.theme.home.typewriter};
     }
   }
 
@@ -73,7 +73,7 @@ const TypewriterText = styled.span`
 `;
 
 const Container = styled.div`
-  background-color: #f9f9f9;
+  background-color: ${props => props.theme.colors.primary};
   height: 100%;
   width: 100%;
   position: relative;
@@ -82,7 +82,7 @@ const Container = styled.div`
 const Down = styled.div`
   position: absolute;
   bottom: 13vh;
-  color: #444;
+  color: ${props => props.theme.colors.opposite};
   left: calc(50% - 1rem);
   transform: translateX(calc(-50% + 1rem));
   font-size: 2rem;

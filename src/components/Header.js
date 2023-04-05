@@ -7,7 +7,7 @@ import './Hamburger.js';
 import Hamburger from "./Hamburger.js";
 
 const HeaderContainer = styled.header`
-  background-color: #fff;
+  background-color: ${props => props.theme.colors.primary};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -45,7 +45,7 @@ const Li = styled.li`
 `;
 
 const NavLink = styled(Link)`
-  color: ${(props) => (props.active === 'true' ? "#0077c2" : "#333")};
+  color: ${(props) => (props.active === 'true' ? (props) => props.theme.colors.accent : props => props.theme.colors.opposite)};
   text-decoration: none;
   position: relative;
   padding-bottom: 3px;
@@ -56,7 +56,7 @@ const NavLink = styled(Link)`
     display: block;
     height: 2px;
     width: 0;
-    background-color: #0077c2;
+    background-color: ${(props) => props.theme.colors.accent};
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -78,7 +78,7 @@ const NavLink = styled(Link)`
 `;
 
 const HamburgerLink = styled(Link)`
-  color: ${(props) => (props.active === 'true' ? "#0077c2" : "#333")};
+  color: ${(props) => (props.active === 'true' ? (props) => props.theme.colors.accent : props => props.theme.colors.opposite)};
   text-decoration: ${(props) => (props.active === 'true' ? "underline" : "none")};
   text-underline-offset: 6px;
   text-decoration-thickness: 2px;
@@ -87,11 +87,11 @@ const HamburgerLink = styled(Link)`
   display: block;
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid ${props => props.theme.home.burger};
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background-color: #f9f9f9;
+    background-color: ${props => props.theme.colors.primary};
   }
 `;
 
