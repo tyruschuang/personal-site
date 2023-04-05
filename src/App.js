@@ -3,7 +3,6 @@ import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
-import ModeButton from './components/ModeButton';
 
 const lightTheme = {
   type: 'light',
