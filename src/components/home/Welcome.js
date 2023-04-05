@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Waves from "./Waves";
 import { AiOutlineArrowDown } from "react-icons/ai";
-import { lighten } from "../Utils";
+import { lighten } from "../../Utils";
 
 const gradientAnimation = keyframes`
   0% {

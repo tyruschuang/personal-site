@@ -156,6 +156,8 @@ const ViewSourceBtn = styled.a`
     background-color: ${props => props.theme.colors.opposite};
     color: ${props => props.theme.colors.primary};
     border-color: ${props => props.theme.colors.opposite};
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 `;
 

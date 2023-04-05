@@ -1,14 +1,16 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
-import { lighten } from "../Utils";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaJava } from "react-icons/fa";
+import { lighten } from "../../Utils";
 
 const skills = [
+  { name: "Java", icon: FaJava, proficiency: 95 },
   { name: "HTML", icon: FaHtml5, proficiency: 90 },
   { name: "CSS", icon: FaCss3Alt, proficiency: 80 },
   { name: "JavaScript", icon: FaJs, proficiency: 85 },
   { name: "React", icon: FaReact, proficiency: 80 },
   { name: "Node.js", icon: FaNodeJs, proficiency: 70 },
+  { name: "Python", icon: FaPython, proficiency: 50 },
 ];
 
 const gradientAnimation = keyframes`

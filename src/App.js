@@ -1,11 +1,11 @@
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import './App.css';
-import Home from './components/Home';
-import Footer from './components/Footer';
-import Header from './components/Header';
+import Home from './components/home/Home';
+import Footer from './components/common/Footer';
+import Header from './components/common/Header';
+import Skills from './components/skills/Skills';
 import { useState } from 'react';
-import Skills from './components/Skills';
 
 const lightTheme = {
   type: 'light',
