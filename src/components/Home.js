@@ -46,7 +46,7 @@ const Section = styled.div`
   max-width: 400px;
 `;
 
-const Title = styled.h3`
+const SectionTitle = styled.h3`
   margin-bottom: 1rem;
   color: ${props => props.theme.colors.opposite};
   font-weight: bold;
@@ -71,11 +71,11 @@ export default function Home() {
       </Header>
       <Content>
         <Section>
-          <Title>My Story</Title>
+          <SectionTitle>My Story</SectionTitle>
           <p>lorem ipsum</p>
         </Section>
         <Section>
-          <Title>My Skills</Title>
+          <SectionTitle>My Skills</SectionTitle>
           <List>
             <ListItem>HTML</ListItem>
             <ListItem>CSS</ListItem>
@@ -84,7 +84,7 @@ export default function Home() {
           </List>
         </Section>
         <Section>
-          <Title>My Hobbies</Title>
+          <SectionTitle>My Hobbies</SectionTitle>
           <List>
             <ListItem>gaming</ListItem>
           </List>
