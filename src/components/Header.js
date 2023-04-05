@@ -45,7 +45,7 @@ const Li = styled.li`
 `;
 
 const NavLink = styled(Link)`
-  color: ${(props) => (props.active === 'true' ? (props) => props.theme.colors.accent : props => props.theme.colors.opposite)};
+  color: ${(props) => (props.active === 'true' ? props.theme.colors.accent : props.theme.colors.opposite)};
   text-decoration: none;
   position: relative;
   padding-bottom: 3px;
@@ -56,7 +56,7 @@ const NavLink = styled(Link)`
     display: block;
     height: 2px;
     width: 0;
-    background-color: ${(props) => props.theme.colors.accent};
+    background-color: ${props => props.theme.colors.accent};
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -78,7 +78,7 @@ const NavLink = styled(Link)`
 `;
 
 const HamburgerLink = styled(Link)`
-  color: ${(props) => (props.active === 'true' ? (props) => props.theme.colors.accent : props => props.theme.colors.opposite)};
+  color: ${(props) => (props.active === 'true' ? props.theme.colors.accent : props.theme.colors.opposite)};
   text-decoration: ${(props) => (props.active === 'true' ? "underline" : "none")};
   text-underline-offset: 6px;
   text-decoration-thickness: 2px;

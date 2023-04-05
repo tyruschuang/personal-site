@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 
 import { AiOutlineTwitter, AiOutlineGithub } from "react-icons/ai";
 
@@ -90,7 +90,7 @@ const LinkStyled = styled(Link)`
     display: block;
     height: 2px;
     width: 0;
-    background-color: ${(props) => props.theme.colors.accent};
+    background-color: ${props => props.theme.colors.accent};
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -160,7 +160,6 @@ const ViewSourceBtn = styled.a`
 `;
 
 export default function Footer() {
-  const theme = useTheme();
   return (
     <FooterWrapper>
       <FooterContent>
