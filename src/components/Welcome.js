@@ -1,11 +1,25 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Waves from "./Waves";
 import { AiOutlineArrowDown } from "react-icons/ai";
+import { lighten } from "../Utils";
+
+const gradientAnimation = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+`;
 
 const TextContainer = styled.div`
-  background: linear-gradient(60deg, ${props => props.theme.home.wave1} 0%, ${props => props.theme.home.wave2} 100%);
-  background-size: cover;
+  background: linear-gradient(60deg, ${props => lighten(props.theme.colors.gradient1, 0.04)} 0%, ${props => lighten(props.theme.colors.gradient2, 0.04)} 100%);
+  animation: ${gradientAnimation} 10s ease-in-out infinite;
+  background-size: 200% 200%;
   color: ${props => props.theme.colors.primary};
   height: auto;
   min-height: 100vh;

@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import { useState } from 'react';
+import Skills from './components/Skills';
 
 const lightTheme = {
   type: 'light',
@@ -13,17 +14,23 @@ const lightTheme = {
     primary: '#fff',
     accent: '#0077c2',
     opposite: '#333',
+
+    gradient1: '#66A6FF',
+    gradient2: '#4C83FF',
   },
 
   home: {
-    typewriter: '#3677FF',
+    typewriter: '#1A69E8',
     burger: '#eee',
-    wave1: '#736EFE',
-    wave2: '#ABDCFF',
   },
 
   footer: {
     background: '#f4f4f4'
+  },
+
+  skills: {
+    background: '#f4f4f4',
+    barBackground: '#ccc',
   },
 };
 
@@ -40,8 +47,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Outlet />}>
               <Route index element={<Home />} />
-              <Route path="/about" element={<Home />} />
-              <Route path="/skills" element={<Home />} />
+              <Route path="/skills" element={<Skills />} />
               <Route path="/projects" element={<Home />} />
               <Route path="/recommendations" element={<Home />} />
               <Route path="/resume" element={<Home />} />
