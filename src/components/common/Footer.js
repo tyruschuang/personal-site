@@ -5,12 +5,14 @@ import styled from "styled-components";
 import { AiOutlineTwitter, AiOutlineGithub } from "react-icons/ai";
 
 const FooterWrapper = styled.footer`
-  background-color: ${props => props.theme.footer.background};
+  transition: all 0.4s ease-in-out;
+  z-index: 500;
+  background-color: ${(props) => props.theme.primary[2]};
   padding: 40px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -2px 10px ${(props) => props.theme.elevation}};
 
   @media screen and (min-width: 768px) {
     padding: 60px 0 20px;
@@ -58,15 +60,15 @@ const SectionHeader = styled.h2`
   font-weight: bold;
   padding-bottom: 7px;
   margin-bottom: 10px;
-  border-bottom: 2px solid ${props => props.theme.colors.accent}};
+  border-bottom: 2px solid ${(props) => props.theme.accent[2]}};
+  color: ${(props) => props.theme.secondary[1]};
 
   @media screen and (min-width: 768px) {
     margin-bottom: 20px;
   }
 `;
 
-const SectionContent = styled.div`
-`;
+const SectionContent = styled.div``;
 
 const LinksList = styled.ul`
   margin: 0;
@@ -80,7 +82,7 @@ const LinksListItem = styled.li`
 
 const LinkStyled = styled(Link)`
   font-size: 18px;
-  color: ${props => props.theme.colors.opposite};
+  color: ${(props) => props.theme.secondary[2]};
   text-decoration: none;
   position: relative;
   transition: color 0.1s ease-in-out;
@@ -90,7 +92,7 @@ const LinkStyled = styled(Link)`
     display: block;
     height: 2px;
     width: 0;
-    background-color: ${props => props.theme.colors.accent};
+    background-color: ${(props) => props.theme.accent[1]};
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -107,6 +109,7 @@ const SectionText = styled.p`
   font-size: 18px;
   line-height: 1.6;
   margin: 0;
+  color: ${(props) => props.theme.secondary[2]};
 `;
 
 const SocialList = styled.ul`
@@ -124,18 +127,18 @@ const SocialListItem = styled.li`
 
 const SocialLink = styled.a`
   font-size: 36px;
-  color: ${props => props.theme.colors.opposite};
+  color: ${(props) => props.theme.secondary[2]};
   transition: all 0.2s ease-in-out;
   &:hover {
-    color: ${props => props.theme.colors.accent}};
+    color: ${(props) => props.theme.accent[2]}};
   }
 `;
-
 
 const BottomText = styled.div`
   font-size: 16px;
   text-align: center;
   margin-top: 40px;
+  color: ${(props) => props.theme.secondary[1]};
 `;
 
 const ViewSourceBtn = styled.a`
@@ -143,8 +146,8 @@ const ViewSourceBtn = styled.a`
   align-items: center;
   justify-content: center;
   padding: 8px 12px;
-  border: 1px solid ${props => props.theme.colors.opposite};
-  color: ${props => props.theme.colors.opposite};
+  border: 1px solid ${(props) => props.theme.secondary[2]};
+  color: ${(props) => props.theme.secondary[2]};
   border-radius: 4px;
   text-decoration: none;
   font-size: 0.9rem;
@@ -153,11 +156,10 @@ const ViewSourceBtn = styled.a`
   vertical-align: middle;
   
   &:hover {
-    background-color: ${props => props.theme.colors.opposite};
-    color: ${props => props.theme.colors.primary};
-    border-color: ${props => props.theme.colors.opposite};
+    color: ${(props) => props.theme.secondary[1]};
+    border-color: ${(props) => props.theme.secondary[1]};
     transform: translateY(-5px);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 6px 8px ${(props) => props.theme.elevation}};
   }
 `;
 
@@ -181,13 +183,10 @@ export default function Footer() {
                 <LinkStyled to="/">Home</LinkStyled>
               </LinksListItem>
               <LinksListItem>
-                <LinkStyled to="/projects">Projects</LinkStyled>
+                <LinkStyled to="/about">About</LinkStyled>
               </LinksListItem>
               <LinksListItem>
-                <LinkStyled to="/skills">Skills</LinkStyled>
-              </LinksListItem>
-              <LinksListItem>
-                <LinkStyled to="/resume">Resume</LinkStyled>
+                <LinkStyled to="/portfolio">Portfolio</LinkStyled>
               </LinksListItem>
               <LinksListItem>
                 <LinkStyled to="/contact">Contact</LinkStyled>
@@ -200,12 +199,20 @@ export default function Footer() {
           <SectionContent>
             <SocialList>
               <SocialListItem>
-                <SocialLink href="https://twitter.com/omgabuilds" target="_blank" rel="noreferrer">
+                <SocialLink
+                  href="https://twitter.com/omgabuilds"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <AiOutlineTwitter />
                 </SocialLink>
               </SocialListItem>
               <SocialListItem>
-                <SocialLink href="https://github.com/omegaladon" target="_blank" rel="noreferrer">
+                <SocialLink
+                  href="https://github.com/omegaladon"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <AiOutlineGithub />
                 </SocialLink>
               </SocialListItem>
@@ -215,7 +222,13 @@ export default function Footer() {
       </FooterContent>
       <BottomText>
         &copy; 2023 | Designed by Tyrus Chuang
-        <ViewSourceBtn href="https://github.com/omegaladon/personal-site" target="_blank" rel="noreferrer">View Source</ViewSourceBtn>
+        <ViewSourceBtn
+          href="https://github.com/omegaladon/personal-site"
+          target="_blank"
+          rel="noreferrer"
+        >
+          View Source
+        </ViewSourceBtn>
       </BottomText>
     </FooterWrapper>
   );

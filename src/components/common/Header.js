@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 
 import './Hamburger.js';
 import Hamburger from "./Hamburger.js";
 
 const HeaderContainer = styled.header`
-  background-color: ${props => props.theme.colors.primary};
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
+  background-color: ${props => props.theme.primary[2]};
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   position: sticky;
   top: 0;
   left: 0;
@@ -17,10 +18,16 @@ const HeaderContainer = styled.header`
 
 const Nav = styled.nav`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 1.5rem;
   font-size: 1.2rem;
+
+  @media screen and (max-width: 850px) {
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column;
+  }
 `;
 
 const Ul = styled.ul`
@@ -28,23 +35,28 @@ const Ul = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  position: relative;
 
-  @media only screen and (max-width: 600px) {
+  @media screen and (max-width: 850px) {
     display: none;
   }
 `;
 
 const Li = styled.li`
-  margin: 0 1rem;
+  margin: 0 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
 
-  @media only screen and (max-width: 600px) {
+  @media screen and (max-width: 850px) {
     margin: 0;
     padding: 0.5rem 0;
   }
 `;
 
 const NavLink = styled(Link)`
-  color: ${(props) => (props.active === 'true' ? props.theme.colors.accent : props.theme.colors.opposite)};
+  color: ${(props) => (props.active === 'true' ? props.theme.accent[1] : props.theme.secondary[2])};
   text-decoration: none;
   position: relative;
   padding-bottom: 3px;
@@ -55,7 +67,7 @@ const NavLink = styled(Link)`
     display: block;
     height: 2px;
     width: 0;
-    background-color: ${props => props.theme.colors.accent};
+    background-color: ${props => (props.underline !== 'false' ? props.theme.accent[1] : "transparent")};
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -77,24 +89,27 @@ const NavLink = styled(Link)`
 `;
 
 const HamburgerLink = styled(Link)`
-  color: ${(props) => (props.active === 'true' ? props.theme.colors.accent : props.theme.colors.opposite)};
+  color: ${(props) => (props.active === 'true' ? props.theme.accent[2] : props.theme.secondary[2])};
   text-decoration: ${(props) => (props.active === 'true' ? "underline" : "none")};
   text-underline-offset: 6px;
   text-decoration-thickness: 2px;
   font-size: 18px;
-  padding: 10px;
+  padding: 15px;
   display: block;
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid ${props => props.theme.home.burger};
+  border-bottom: 1px solid;
+  border-color: ${props => props.theme.secondary[3]};
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background-color: ${props => props.theme.colors.primary};
+    background-color: ${props => props.theme.accent[2]};
   }
 `;
 
-export default function Header() {
+export default function Header({ modeOnClick }) {
+
+  const theme = useTheme();
   
   const [activeLink, setActiveLink] = useState("Home");
 
@@ -114,25 +129,18 @@ export default function Header() {
             Home
           </HamburgerLink>
           <HamburgerLink
-            to="/skills"
-            onClick={() => handleLinkClick("Skills")}
-            active={`${activeLink === "Skills"}`}
+            to="/about"
+            onClick={() => handleLinkClick("About")}
+            active={`${activeLink === "About"}`}
           >
-            Skills
+            About
           </HamburgerLink>
           <HamburgerLink
-            to="/projects"
-            onClick={() => handleLinkClick("Projects")}
-            active={`${activeLink === "Projects"}`}
+            to="/portfolio"
+            onClick={() => handleLinkClick("Portfolio")}
+            active={`${activeLink === "Portfolio"}`}
           >
-            Projects
-          </HamburgerLink>
-          <HamburgerLink
-            to="/resume"
-            onClick={() => handleLinkClick("Resume")}
-            active={`${activeLink === "Resume"}`}
-          >
-            Resume
+            Portfolio
           </HamburgerLink>
           <HamburgerLink
             to="/contact"
@@ -140,6 +148,12 @@ export default function Header() {
             active={`${activeLink === "Contact"}`}
           >
             Contact
+          </HamburgerLink>
+          <HamburgerLink
+            onClick={modeOnClick}
+            underline="false"
+          >
+            {theme.type === "light" ? "🌙" : "☀️"}
           </HamburgerLink>
         </Hamburger>
         <Ul>
@@ -154,29 +168,20 @@ export default function Header() {
           </Li>
           <Li>
             <NavLink
-              to="/skills"
-              onClick={() => handleLinkClick("Skills")}
-              active={`${activeLink === "Skills"}`}
+              to="/about"
+              onClick={() => handleLinkClick("About")}
+              active={`${activeLink === "About"}`}
             >
-              Skills
+              About
             </NavLink>
           </Li>
           <Li>
             <NavLink
-              to="/projects"
-              onClick={() => handleLinkClick("Projects")}
-              active={`${activeLink === "Projects"}`}
+              to="/portfolio"
+              onClick={() => handleLinkClick("Portfolio")}
+              active={`${activeLink === "Portfolio"}`}
             >
-              Projects
-            </NavLink>
-          </Li>
-          <Li>
-            <NavLink
-              to="/resume"
-              onClick={() => handleLinkClick("Resume")}
-              active={`${activeLink === "Resume"}`}
-            >
-              Resume
+              Portfolio
             </NavLink>
           </Li>
           <Li>
@@ -186,6 +191,14 @@ export default function Header() {
               active={`${activeLink === "Contact"}`}
             >
               Contact
+            </NavLink>
+          </Li>
+          <Li>
+            <NavLink
+              onClick={modeOnClick}
+              underline="false"
+            >
+              {theme.type === "light" ? "🌙" : "☀️"}
             </NavLink>
           </Li>
         </Ul>
