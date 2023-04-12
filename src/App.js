@@ -5,7 +5,7 @@ import Footer from './components/common/Footer';
 import Header from './components/common/Header';
 import LandingPage from './components/Landing';
 import About from './components/About';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { colors } from './Colors';
 import ScrollToTop from './components/util/ScrollToTop';
 
@@ -64,6 +64,29 @@ export default function App() {
   function handleThemeClick() {
     setTheme(theme === lightTheme ? darkTheme : lightTheme)
   }
+
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const prefersDarkMode = darkModeMediaQuery.matches;
+
+    if (prefersDarkMode) {
+      setTheme(darkTheme);
+    }
+
+    const listener = (event) => {
+      if (event.matches) {
+        setTheme(darkTheme);
+      } else {
+        setTheme(lightTheme);
+      }
+    };
+
+    darkModeMediaQuery.addEventListener('change', listener);
+
+    return () => {
+      darkModeMediaQuery.removeEventListener('change', listener);
+    };
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
