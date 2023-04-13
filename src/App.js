@@ -3,11 +3,12 @@ import { ThemeProvider } from 'styled-components';
 import './App.css';
 import Footer from './components/common/Footer';
 import Header from './components/common/Header';
-import LandingPage from './components/Landing';
+import Landing from './components/Landing';
 import About from './components/About';
+import ScrollToTop from './components/util/ScrollToTop';
+import Contact from './components/Contact';
 import { useEffect, useState } from 'react';
 import { colors } from './Colors';
-import ScrollToTop from './components/util/ScrollToTop';
 
 const lightTheme = {
   type: 'light',
@@ -62,31 +63,29 @@ export default function App() {
   const [theme, setTheme] = useState(lightTheme);
 
   function handleThemeClick() {
-    setTheme(theme === lightTheme ? darkTheme : lightTheme)
+    let newTheme = theme === lightTheme ? darkTheme : lightTheme;
+    localStorage.setItem('storedTheme', JSON.stringify(newTheme));
+    setTheme(newTheme)
   }
-
+  
   useEffect(() => {
-    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const prefersDarkMode = darkModeMediaQuery.matches;
-
-    if (prefersDarkMode) {
-      setTheme(darkTheme);
-    }
-
-    const listener = (event) => {
-      if (event.matches) {
+    const localTheme = JSON.parse(localStorage.getItem('storedTheme'));
+  
+    if (localTheme == null) {
+      const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const prefersDarkMode = darkModeMediaQuery.matches;
+  
+      if (prefersDarkMode) {
+        localStorage.setItem('storedTheme', JSON.stringify(darkTheme));
         setTheme(darkTheme);
       } else {
-        setTheme(lightTheme);
+        localStorage.setItem('storedTheme', JSON.stringify(lightTheme));
       }
-    };
-
-    darkModeMediaQuery.addEventListener('change', listener);
-
-    return () => {
-      darkModeMediaQuery.removeEventListener('change', listener);
-    };
+    } else {
+      setTheme(localTheme);
+    }
   }, []);
+  
 
   return (
     <ThemeProvider theme={theme}>
@@ -96,11 +95,11 @@ export default function App() {
           <Header modeOnClick={handleThemeClick}/>
           <Routes>
             <Route path="/" element={<Outlet />}>
-              <Route index element={<LandingPage />} />
+              <Route index element={<Landing />} />
               <Route path="/about" element={<About />} />
-              <Route path="/portfolio" element={<LandingPage />} />
-              <Route path="/recommendations" element={<LandingPage />} />
-              <Route path="/contact" element={<LandingPage />} />
+              <Route path="/portfolio" element={<Landing />} />
+              <Route path="/recommendations" element={<Landing />} />
+              <Route path="/contact" element={<Contact />} />
             </Route>
           </Routes>
           <Footer />
