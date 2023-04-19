@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { AiOutlineTwitter, AiOutlineGithub } from "react-icons/ai";
+import { AiOutlineTwitter, AiOutlineGithub, AiTwotoneMail } from "react-icons/ai";
 
 const FooterWrapper = styled.footer`
   transition: all 0.4s ease-in-out;
@@ -214,6 +214,13 @@ export default function Footer() {
                   rel="noreferrer"
                 >
                   <AiOutlineGithub />
+                </SocialLink>
+              </SocialListItem>
+              <SocialListItem>
+                <SocialLink
+                  href="mailto:businessomga@gmail.com"
+                  >
+                  <AiTwotoneMail />
                 </SocialLink>
               </SocialListItem>
             </SocialList>

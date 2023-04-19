@@ -1,8 +1,12 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const transition = css`
+  transition: all 0.4s ease-in-out;
+`;
 
 const Container = styled.div`
-  transition: all 0.4s ease-in-out;
+  ${transition}
   background-color: ${props => props.theme.primary[1]};
   display: flex;
   justify-content: center;
@@ -12,7 +16,7 @@ const Container = styled.div`
 `;
 
 const TextContainer = styled.div`
-  transition: all 0.4s ease-in-out;
+  ${transition}
   max-width: 800px;
   margin: 0 auto;
   padding: 40px;
@@ -22,6 +26,7 @@ const TextContainer = styled.div`
 `;
 
 const Header = styled.h1`
+  ${transition}
   font-size: 36px;
   margin-bottom: 20px;
   color: ${props => props.theme.secondary[2]};
@@ -30,17 +35,18 @@ const Header = styled.h1`
 `;
 
 const Subheader = styled.h2`
+  ${transition}
   font-size: 24px;
   margin-bottom: 20px;
   color: ${props => props.theme.secondary[1]};
   border-bottom: 2px solid ${props => props.theme.secondary[1]};
   padding-bottom: 10px;
   text-align: center;
-  text-transform: uppercase;
   letter-spacing: 2px;
 `;
 
 const Paragraph = styled.p`
+  ${transition}
   font-size: 18px;
   line-height: 1.5;
   margin-bottom: 20px;
@@ -51,16 +57,19 @@ const Paragraph = styled.p`
 const List = styled.ul`
   font-size: 18px;
   list-style: none;
-  margin-bottom: 20px;\
+  margin-bottom: 20px;
   color: ${props => props.theme.secondary[2]};
   text-align: justify;
 `;
 
 const ListItem = styled.li`
+  ${transition}
+  transition: all 0.4s ease-in-out;
   margin-bottom: 10px;
   font-family: "Poppins", sans-serif;
 
   &::before {
+    ${transition}
     content: "<";
     font-weight: bold;
     color: ${props => props.theme.accent[1]};
@@ -69,6 +78,7 @@ const ListItem = styled.li`
   }
   
   &::after {
+    ${transition}
     content: "/>";
     font-weight: bold;
     color: ${props => props.theme.accent[1]};
@@ -78,16 +88,15 @@ const ListItem = styled.li`
 `;
 
 const ResumeLink = styled.a`
+  transition: all 0.4s ease-in-out;
   display: inline-block;
   font-size: 18px;
   margin-top: 40px;
   color: #0077c0;
   text-align: center;
   text-decoration: none;
-  border-bottom: 2px solid #0077c0;
   &:hover {
     color: #005d9f;
-    border-bottom: 2px solid #005d9f;
   }
 `;
 
@@ -95,25 +104,25 @@ export default function About() {
   return (
     <Container>
       <TextContainer>
-        <Header>About Me</Header>
-        <Subheader>Who Am I?</Subheader>
+        <Header>About</Header>
+        <Subheader>who i am</Subheader>
         <Paragraph>
           hi, im a person
         </Paragraph>
-        <Subheader>What Do I Do?</Subheader>
+        <Subheader>what i do</Subheader>
         <Paragraph>
           im a student
         </Paragraph>
-        <Subheader>Experience</Subheader>
+        <Subheader>my experience</Subheader>
         <List>
           <ListItem>experience 1</ListItem>
         </List>
-        <Subheader>Interests</Subheader>
+        <Subheader>my interests</Subheader>
         <List>
           <ListItem>interest 1</ListItem>
         </List>
         <ResumeLink href="/resume.pdf" target="_blank">
-          Download Resume
+          ↓ resume
         </ResumeLink>
       </TextContainer>
     </Container>

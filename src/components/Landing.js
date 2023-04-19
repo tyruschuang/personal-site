@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-import { AiOutlineTwitter, AiOutlineGithub } from "react-icons/ai";
+import { AiOutlineTwitter, AiOutlineGithub, AiTwotoneMail } from "react-icons/ai";
 
 const Container = styled.div`
   transition: all 0.4s ease-in-out;
@@ -80,7 +80,7 @@ const SocialList = styled.ul`
   justify-content: flex-start;
 `;
 
-const Social = styled.div`
+const Social = styled.a`
   display: inline-block;
   font-size: 38px;
   color: ${props => props.theme.secondary[3]};
@@ -177,6 +177,9 @@ export default function Landing() {
           </Social>
           <Social href="https://twitter.com/omgabuilds" target="_blank" rel="noreferrer">
             <AiOutlineTwitter />
+          </Social>
+          <Social href="mailto:businessomga@gmail.com">
+            <AiTwotoneMail />
           </Social>
         </SocialList>
       </TextContainer>

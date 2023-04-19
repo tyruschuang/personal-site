@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styled, { useTheme } from "styled-components";
+import styled, { css, useTheme } from "styled-components";
 
 import './Hamburger.js';
 import Hamburger from "./Hamburger.js";
 
-const HeaderContainer = styled.header`
+const transition = css`
   transition: all 0.4s ease-in-out;
+`;
+
+const HeaderContainer = styled.header`
+  ${transition}
   background-color: ${props => props.theme.primary[2]};
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   position: sticky;
@@ -60,7 +64,6 @@ const NavLink = styled(Link)`
   text-decoration: none;
   position: relative;
   padding-bottom: 3px;
-  transition: color 0.1s ease-in-out;
 
   &:after {
     content: "";
