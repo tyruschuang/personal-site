@@ -21,6 +21,10 @@ const ContentContainer = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 8px ${props => props.theme.elevation};
   padding: 50px;
+
+  @media screen and (max-width: 768px) {
+    padding: 30px 10px;
+  }
 `;
 
 const Header = styled.h1`

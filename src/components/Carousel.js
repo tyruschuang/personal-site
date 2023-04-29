@@ -28,41 +28,17 @@ const CarouselImage = styled.img`
 const CarouselButton = styled.button`
   position: absolute;
   top: 50%;
-  ${({ direction }) => (direction === "left" ? "left: 10px;" : "right: 10px;")}
+  ${({ direction }) => (direction === "left" ? "left: 5px;" : "right: 5px;")}
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
   color: white;
   border: none;
-  border-radius: 20%;
+  border-radius: 100%;
   font-size: 1.5rem;
-  padding: 10px;
+  padding: 2px 10px;
   cursor: pointer;
   z-index: 1;
 `;
-
-const CarouselIndicators = styled.div`
-  position: absolute;
-  bottom: 0;
-  padding: 10px;
-  left: 0;
-  right: 0;
-
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-`;
-
-const CarouselIndicator = styled.img`
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  margin: 0 5px;
-  cursor: pointer;
-  border: ${({ isActive }) => (isActive ? "3px solid #fff" : "1px solid #fff")};
-  opacity: ${({ isActive }) => (isActive ? "0.6" : "0.4")};
-  transition: border 0.3s ease, opacity 0.3s ease;
-`;
-
 
 export default function Carousel({ images }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -92,16 +68,6 @@ export default function Carousel({ images }) {
       <CarouselButton direction="right" onClick={handleNext}>
         &gt;
       </CarouselButton>
-      <CarouselIndicators>
-        {images.map((image, index) => (
-          <CarouselIndicator
-            key={index}
-            src={image.src}
-            isActive={index === currentSlide}
-            onClick={() => setCurrentSlide(index)}
-          />
-        ))}
-      </CarouselIndicators>
     </CarouselContainer>
   );
 }

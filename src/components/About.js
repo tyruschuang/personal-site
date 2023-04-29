@@ -62,6 +62,10 @@ const ContentContainer = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 8px ${(props) => props.theme.elevation};
   padding: 50px;
+
+  @media screen and (max-width: 768px) {
+    padding: 30px 10px;
+  }
 `;
 
 const Header = styled.h1`
@@ -88,14 +92,22 @@ const Header = styled.h1`
   &:hover::after {
     transform: scaleX(1);
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 36px;
+  }
 `;
 
 const Bio = styled.p`
-  font-size: 1.25rem;
+  font-size: 20px;
   text-align: center;
   max-width: 800px;
   margin-bottom: 2rem;
   color: ${(props) => props.theme.secondary[2]}};
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const ListContainer = styled.div`
@@ -115,6 +127,10 @@ const ListItem = styled.li`
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
   color: ${(props) => props.theme.secondary[2]}};
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const ListTitle = styled.h2`
@@ -123,6 +139,10 @@ const ListTitle = styled.h2`
   color: ${(props) => props.theme.secondary[1]}};
   margin-top: 2rem;
   border-bottom: 2px solid ${(props) => props.theme.accent[1]}};
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const SkillTitle = styled.h2`
