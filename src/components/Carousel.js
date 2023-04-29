@@ -22,7 +22,7 @@ const CarouselImage = styled.img`
   max-height: 800px;
   object-fit: contain;
   display: block;
-  cursor: pointer;
+  cursor: ${({ link }) => link !== "" ? "pointer" : "default"};
 `;
 
 const CarouselButton = styled.button`
@@ -61,7 +61,12 @@ export default function Carousel({ images }) {
           <CarouselImage
             key={index}
             src={image.src}
-            onClick={() => window.open(image.link, "_blank")}
+            link={image.link}
+            onClick={() => {
+              if (image.link !== "") {
+                window.open(image.link, "_blank");
+              }
+            }}
           />
         ))}
       </CarouselSlide>

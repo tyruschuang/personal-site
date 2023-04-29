@@ -83,6 +83,54 @@ export const Assets = {
         src: "https://pbs.twimg.com/media/FrwZNn3aEAEHfZm?format=jpg&name=large",
         link: "https://twitter.com/omgabuilds/status/1638212091244081152?s=20",
       },
+      {
+        src: "https://i.postimg.cc/MKKwryvg/s.png",
+        link: "",
+      },
+      {
+        src: "https://i.imgur.com/0zY0tkA.png",
+        link: "",
+      },
+      {
+        src: "https://i.imgur.com/qj8u42y.jpg",
+        link: "",
+      },
+      {
+        src: "https://i.imgur.com/doyvEaB.png",
+        link: "",
+      },
+      {
+        src: "https://i.imgur.com/iE9tR8O.png",
+        link: "",
+      },
+      {
+        src: "https://i.imgur.com/YozCfI4.jpg",
+        link: "",
+      },
+      {
+        src: "https://i.imgur.com/MJa4GxY.jpg",
+        link: "",
+      },
+      {
+        src: "https://i.imgur.com/4zEtKVy.png",
+        link: "",
+      },
+      {
+        src: "https://i.imgur.com/zb6JAgC.jpg",
+        link: "",
+      },
+      {
+        src: "https://i.imgur.com/13IdjiF.jpg",
+        link: "",
+      },
+      {
+        src: "https://i.imgur.com/oyiJzDO.png",
+        link: "",
+      },
+      {
+        src: "https://i.imgur.com/ctjdh45.jpg",
+        link: "",
+      },
     ],
   },
   socials: [
