@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { AiOutlineTwitter, AiOutlineGithub, AiTwotoneMail } from "react-icons/ai";
 import { Assets } from "../../Assets";
 
 const FooterWrapper = styled.footer`

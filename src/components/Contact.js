@@ -1,6 +1,4 @@
 import React from "react";
-import { useForm } from "react-hook-form";
-import { AiOutlineGithub, AiOutlineTwitter, AiTwotoneMail } from "react-icons/ai";
 import styled from "styled-components";
 import { Assets } from "../Assets";
 
