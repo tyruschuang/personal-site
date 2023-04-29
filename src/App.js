@@ -1,14 +1,14 @@
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import './App.css';
+import { colors } from './Colors';
+import About from './components/About';
+import Contact from './components/Contact';
+import Landing from './components/Landing';
 import Footer from './components/common/Footer';
 import Header from './components/common/Header';
-import Landing from './components/Landing';
-import About from './components/About';
-import ScrollToTop from './components/util/ScrollToTop';
-import Contact from './components/Contact';
-import { useEffect, useState } from 'react';
-import { colors } from './Colors';
+import Portfolio from './components/Portfolio';
 
 const lightTheme = {
   type: 'light',
@@ -91,13 +91,12 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <div className="container">
         <BrowserRouter>
-          <ScrollToTop />
           <Header modeOnClick={handleThemeClick}/>
           <Routes>
             <Route path="/" element={<Outlet />}>
               <Route index element={<Landing />} />
               <Route path="/about" element={<About />} />
-              <Route path="/portfolio" element={<Landing />} />
+              <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/recommendations" element={<Landing />} />
               <Route path="/contact" element={<Contact />} />
             </Route>

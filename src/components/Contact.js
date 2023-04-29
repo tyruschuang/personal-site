@@ -1,38 +1,82 @@
 import React from "react";
-import styled, { css } from "styled-components";
 import { useForm } from "react-hook-form";
+import { AiOutlineGithub, AiOutlineTwitter, AiTwotoneMail } from "react-icons/ai";
+import styled from "styled-components";
 
-const transition = css`
-  transition: all 0.4s ease-in-out;
-`;
-
-const Container = styled.div`
-  ${transition}
+const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: ${(props) => props.theme.primary[1]};
-`;
-
-const Header = styled.h1`
-  ${transition}
-  position: relative;
-  font-size: 36px;
-  color: ${(props) => props.theme.secondary[2]};
+  min-height: calc(100vh - 100px);
+  padding: 50px;
+  background-color: ${props => props.theme.primary[1]};
 `;
 
 const ContentContainer = styled.div`
-  ${transition}
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 50px 200px;
-  background-color: ${(props) => props.theme.primary[2]};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: ${props => props.theme.primary[2]};
   border-radius: 10px;
-  box-shadow: 0 8px 10px 0 ${(props) => props.theme.elevation};
+  box-shadow: 0 4px 8px ${props => props.theme.elevation};
+  padding: 50px;
+`;
+
+const Header = styled.h1`
+  color: ${props => props.theme.secondary[1]};
+  font-size: 48px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: ${props => props.theme.accent[1]};
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+`;
+
+const Blurb = styled.p`
+  font-size: 1.25rem;
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 3rem;
+  color: ${props => props.theme.secondary[2]}};
+`;
+
+const Title = styled.h2`
+  color: ${props => props.theme.secondary[2]};
+  font-size: 24px;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+`;
+
+const OptionsContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const FormContainer = styled.div`
@@ -86,7 +130,13 @@ const FormMessage = styled.textarea`
   }
 `;
 
-const ContactButton = styled.button`
+const FormError = styled.span`
+  color: ${(props) => props.theme.secondary[3]};
+  font-size: 14px;
+  margin: 5px;
+`;
+
+const FormSend = styled.button`
   transition: all 0.3s ease-out;
   padding: 10px 20px;
   margin: 10px;
@@ -107,28 +157,34 @@ const ContactButton = styled.button`
   }
 `;
 
-
-const Socials = styled.div`
+const SocialsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1rem;
 
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+  @media screen and (max-width: 768px) {
+    margin-top: 50px;
   }
 `;
 
-const OrText = styled.p`
-  position: relative;
-  top: -1.5rem;
-  background-color: white;
-  padding: 0 0.5rem;
+const SocialLink = styled.a`
+  font-size: 60px;
+  color: ${(props) => props.theme.secondary[3]};
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: ${(props) => props.theme.accent[2]}};
+  }
 `;
 
-const Contact = () => {
+const FinalText = styled.p`
+  font-size: 1.25rem;
+  text-align: center;
+  max-width: 800px;
+  margin-top: 3rem;
+  color: ${props => props.theme.secondary[2]}};
+`;
+
+export default function Contact() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   
   const onSubmit = (data) => {
@@ -136,31 +192,51 @@ const Contact = () => {
   };
 
   return (
-    <Container>
+    <ContactContainer>
       <ContentContainer>
-        <FormContainer>
-          <Header>Contact</Header>
-          <Form onSubmit={handleSubmit(onSubmit)}>
-            <FormInput id="name" placeholder="name" {...register('name', { required: true })} />
-            {errors.name && <span>This field is required</span>}
-            
-            <FormInput id="email" type="email" placeholder="email" {...register('email', { required: true, pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i })} />
-            {errors.email && <span>Please enter a valid email address</span>}
-            
-            <FormMessage id="message" placeholder="message" {...register('message', { required: true })} />
-            {errors.message && <span>This field is required</span>}
-            
-            <ContactButton type="submit">Send</ContactButton>
-          </Form>
-        </FormContainer>
-        <Socials>
-          <OrText>or</OrText>
-          <p>Or email us at:</p>
-          <a href="mailto:info@example.com">info@example.com</a>
-        </Socials>
+        <Header>Contact</Header>
+        <Blurb>Want to reach me? Use any of the methods below, and I'll get back to you as soon as possible! So, what's your favorite color?</Blurb>
+        <OptionsContainer>
+          <FormContainer>
+            <Title>send a message 📧</Title>
+            <Form onSubmit={handleSubmit(onSubmit)}>
+              <FormInput id="name" placeholder="name" {...register('name', { required: true })} />
+              {errors.name && <FormError>This field is required</FormError>}
+              
+              <FormInput id="email" type="email" placeholder="email" {...register('email', { required: true, pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i })} />
+              {errors.email && <FormError>Please enter a valid email address</FormError>}
+              
+              <FormMessage id="message" placeholder="message" {...register('message', { required: true })} />
+              {errors.message && <FormError>This field is required</FormError>}
+              
+              <FormSend type="submit">Send</FormSend>
+            </Form>
+          </FormContainer>
+          <SocialsContainer>
+            <Title>or find me @ my socials 📱</Title>
+            <SocialLink
+              href="https://twitter.com/omgabuilds"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiOutlineTwitter />
+            </SocialLink>
+            <SocialLink
+              href="https://github.com/omegaladon"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiOutlineGithub />
+            </SocialLink>
+            <SocialLink
+              href="mailto:businessomga@gmail.com"
+              >
+              <AiTwotoneMail />
+            </SocialLink>
+          </SocialsContainer>
+        </OptionsContainer>
+        <FinalText>Thanks for stopping by!</FinalText>
       </ContentContainer>
-    </Container>
+    </ContactContainer>
   );
 };
-
-export default Contact;

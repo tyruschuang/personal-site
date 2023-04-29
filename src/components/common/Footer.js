@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { AiOutlineTwitter, AiOutlineGithub, AiTwotoneMail } from "react-icons/ai";
 
 const FooterWrapper = styled.footer`
-  transition: all 0.4s ease-in-out;
   z-index: 500;
   background-color: ${(props) => props.theme.primary[2]};
   padding: 40px 0;
@@ -85,7 +84,6 @@ const LinkStyled = styled(Link)`
   color: ${(props) => props.theme.secondary[2]};
   text-decoration: none;
   position: relative;
-  transition: color 0.1s ease-in-out;
 
   &:after {
     content: "";
@@ -128,8 +126,8 @@ const SocialListItem = styled.li`
 const SocialLink = styled.a`
   font-size: 36px;
   color: ${(props) => props.theme.secondary[2]};
-  transition: all 0.2s ease-in-out;
   &:hover {
+    transition: all 0.2s ease-in-out;
     color: ${(props) => props.theme.accent[2]}};
   }
 `;
@@ -151,11 +149,11 @@ const ViewSourceBtn = styled.a`
   border-radius: 4px;
   text-decoration: none;
   font-size: 0.9rem;
-  transition: all 0.3s ease;
   margin-left: 3rem;
   vertical-align: middle;
   
   &:hover {
+    transition: all 0.3s ease;
     color: ${(props) => props.theme.secondary[1]};
     border-color: ${(props) => props.theme.secondary[1]};
     transform: translateY(-5px);
@@ -228,7 +226,7 @@ export default function Footer() {
         </FooterSection>
       </FooterContent>
       <BottomText>
-        &copy; 2023 | Designed by Tyrus Chuang
+        Made with ❤️ by Tyrus Chuang
         <ViewSourceBtn
           href="https://github.com/omegaladon/personal-site"
           target="_blank"

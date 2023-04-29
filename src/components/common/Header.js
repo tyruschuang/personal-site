@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styled, { css, useTheme } from "styled-components";
+import styled, { useTheme } from "styled-components";
 
 import './Hamburger.js';
 import Hamburger from "./Hamburger.js";
 
-const transition = css`
-  transition: all 0.4s ease-in-out;
-`;
-
 const HeaderContainer = styled.header`
-  ${transition}
   background-color: ${props => props.theme.primary[2]};
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   position: sticky;
