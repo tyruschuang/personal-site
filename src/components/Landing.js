@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import { AiOutlineTwitter, AiOutlineGithub, AiTwotoneMail } from "react-icons/ai";
+import { Assets } from '../Assets';
 
 const Container = styled.div`
   height: 100vh;
@@ -170,15 +170,15 @@ export default function Landing() {
           <Typewriter>{text}</Typewriter>
         </Subtitle>
         <SocialList>
-          <Social href="https://github.com/omegaladon" target="_blank" rel="noreferrer">
-            <AiOutlineGithub />
-          </Social>
-          <Social href="https://twitter.com/omgabuilds" target="_blank" rel="noreferrer">
-            <AiOutlineTwitter />
-          </Social>
-          <Social href="mailto:businessomga@gmail.com">
-            <AiTwotoneMail />
-          </Social>
+          {Assets.socials.map((social, index) => (
+            <Social
+              href={social.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <social.icon />
+            </Social>
+          ))}
         </SocialList>
       </TextContainer>
     </Container>

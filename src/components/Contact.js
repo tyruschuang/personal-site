@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineGithub, AiOutlineTwitter, AiTwotoneMail } from "react-icons/ai";
 import styled from "styled-components";
+import { Assets } from "../Assets";
 
 const ContactContainer = styled.div`
   display: flex;
@@ -214,25 +215,15 @@ export default function Contact() {
           </FormContainer>
           <SocialsContainer>
             <Title>or find me @ my socials 📱</Title>
-            <SocialLink
-              href="https://twitter.com/omgabuilds"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AiOutlineTwitter />
-            </SocialLink>
-            <SocialLink
-              href="https://github.com/omegaladon"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AiOutlineGithub />
-            </SocialLink>
-            <SocialLink
-              href="mailto:businessomga@gmail.com"
+            {Assets.socials.map((social, index) => (
+              <SocialLink
+                href={social.href}
+                target="_blank"
+                rel="noreferrer"
               >
-              <AiTwotoneMail />
-            </SocialLink>
+                <social.icon />
+              </SocialLink>
+            ))}
           </SocialsContainer>
         </OptionsContainer>
         <FinalText>Thanks for stopping by!</FinalText>

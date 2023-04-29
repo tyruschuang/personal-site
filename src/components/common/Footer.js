@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { AiOutlineTwitter, AiOutlineGithub, AiTwotoneMail } from "react-icons/ai";
+import { Assets } from "../../Assets";
 
 const FooterWrapper = styled.footer`
   z-index: 500;
@@ -196,31 +197,17 @@ export default function Footer() {
           <SectionHeader>Social</SectionHeader>
           <SectionContent>
             <SocialList>
-              <SocialListItem>
-                <SocialLink
-                  href="https://twitter.com/omgabuilds"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <AiOutlineTwitter />
-                </SocialLink>
-              </SocialListItem>
-              <SocialListItem>
-                <SocialLink
-                  href="https://github.com/omegaladon"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <AiOutlineGithub />
-                </SocialLink>
-              </SocialListItem>
-              <SocialListItem>
-                <SocialLink
-                  href="mailto:businessomga@gmail.com"
+              {Assets.socials.map((social, index) => (
+                <SocialListItem>
+                  <SocialLink
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                  <AiTwotoneMail />
-                </SocialLink>
-              </SocialListItem>
+                    <social.icon />
+                  </SocialLink>
+                </SocialListItem>
+              ))}
             </SocialList>
           </SectionContent>
         </FooterSection>

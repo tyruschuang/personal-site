@@ -1,3 +1,6 @@
+import { AiOutlineGithub, AiOutlineTwitter, AiTwotoneMail } from "react-icons/ai";
+import { FaDiscord } from "react-icons/fa";
+
 export const Assets = {
   portfolio: {
     coding_projects_image:
@@ -82,4 +85,28 @@ export const Assets = {
       },
     ],
   },
+  socials: [
+    {
+      icon: AiOutlineTwitter,
+      href: "https://twitter.com/omgabuilds",
+      target: "_blank",
+      rel: "noreferrer"
+    },
+    {
+      icon: AiOutlineGithub,
+      href: "https://github.com/omegaladon",
+      target: "_blank",
+      rel: "noreferrer"
+    },
+    {
+      icon: FaDiscord,
+      href: "https://discord.com/users/244272713730883586",
+      target: "_blank",
+      rel: "noreferrer"
+    },
+    {
+      icon: AiTwotoneMail,
+      href: "mailto:businessomga@gmail.com",
+    }
+  ]
 };
