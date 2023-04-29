@@ -80,83 +80,83 @@ const OptionsContainer = styled.div`
   }
 `;
 
-const FormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+// const FormContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+// `;
 
-const Form = styled.form`
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-`;
+// const Form = styled.form`
+//   display: inline-flex;
+//   flex-direction: column;
+//   align-items: center;
+// `;
 
-const FormInput = styled.input`
-  transition: all 0.2s ease-out;
-  padding: 10px;
-  margin: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 300px;
+// const FormInput = styled.input`
+//   transition: all 0.2s ease-out;
+//   padding: 10px;
+//   margin: 10px;
+//   border: none;
+//   border-radius: 5px;
+//   font-size: 16px;
+//   width: 300px;
 
-  color: ${(props) => props.theme.secondary[2]};
-  background-color: transparent;
-  border: 1px solid ${(props) => props.theme.secondary[3]};
+//   color: ${(props) => props.theme.secondary[2]};
+//   background-color: transparent;
+//   border: 1px solid ${(props) => props.theme.secondary[3]};
 
-  &:focus {
-    border-color: ${(props) => props.theme.secondary[1]};
-    outline: none;
-  }
-`;
+//   &:focus {
+//     border-color: ${(props) => props.theme.secondary[1]};
+//     outline: none;
+//   }
+// `;
 
-const FormMessage = styled.textarea`
-  transition: all 0.2s ease-out;
-  padding: 10px;
-  margin: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 300px;
-  height: 150px;
-  resize: none;
+// const FormMessage = styled.textarea`
+//   transition: all 0.2s ease-out;
+//   padding: 10px;
+//   margin: 10px;
+//   border: none;
+//   border-radius: 5px;
+//   font-size: 16px;
+//   width: 300px;
+//   height: 150px;
+//   resize: none;
 
-  color: ${(props) => props.theme.secondary[2]};
-  background-color: transparent;
-  border: 1px solid ${(props) => props.theme.secondary[3]};
+//   color: ${(props) => props.theme.secondary[2]};
+//   background-color: transparent;
+//   border: 1px solid ${(props) => props.theme.secondary[3]};
 
-  &:focus {
-    border-color: ${(props) => props.theme.secondary[1]};
-    outline: none;
-  }
-`;
+//   &:focus {
+//     border-color: ${(props) => props.theme.secondary[1]};
+//     outline: none;
+//   }
+// `;
 
-const FormError = styled.span`
-  color: ${(props) => props.theme.secondary[3]};
-  font-size: 14px;
-  margin: 5px;
-`;
+// const FormError = styled.span`
+//   color: ${(props) => props.theme.secondary[3]};
+//   font-size: 14px;
+//   margin: 5px;
+// `;
 
-const FormSend = styled.button`
-  transition: all 0.3s ease-out;
-  padding: 10px 20px;
-  margin: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: transparent;
-  color: ${(props) => props.theme.secondary[2]};
-  border: 1px solid ${(props) => props.theme.secondary[3]};
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
+// const FormSend = styled.button`
+//   transition: all 0.3s ease-out;
+//   padding: 10px 20px;
+//   margin: 10px;
+//   border: none;
+//   border-radius: 5px;
+//   background-color: transparent;
+//   color: ${(props) => props.theme.secondary[2]};
+//   border: 1px solid ${(props) => props.theme.secondary[3]};
+//   font-size: 16px;
+//   cursor: pointer;
+//   margin-top: 20px;
 
-  &:hover {
-    border-color: ${(props) => props.theme.secondary[1]};
-    color: ${(props) => props.theme.secondary[1]};
-    transform: translateY(-5px);
-    box-shadow: 0px 6px 8px ${(props) => props.theme.elevation}};
-  }
-`;
+//   &:hover {
+//     border-color: ${(props) => props.theme.secondary[1]};
+//     color: ${(props) => props.theme.secondary[1]};
+//     transform: translateY(-5px);
+//     box-shadow: 0px 6px 8px ${(props) => props.theme.elevation}};
+//   }
+// `;
 
 const SocialsContainer = styled.div`
   display: flex;
@@ -168,9 +168,18 @@ const SocialsContainer = styled.div`
   }
 `;
 
+const SocialsLinkContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 20px;
+`;
+
 const SocialLink = styled.a`
   font-size: 60px;
   color: ${(props) => props.theme.secondary[3]};
+  margin: 0 20px;
   &:hover {
     transition: all 0.2s ease-in-out;
     color: ${(props) => props.theme.accent[2]}};
@@ -186,11 +195,10 @@ const FinalText = styled.p`
 `;
 
 export default function Contact() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  // const { register, handleSubmit, formState: { errors } } = useForm();
   
-  const onSubmit = (data) => {
-    // handle form submission
-  };
+  // const onSubmit = (data) => {
+  // };
 
   return (
     <ContactContainer>
@@ -198,7 +206,7 @@ export default function Contact() {
         <Header>Contact</Header>
         <Blurb>Want to reach me? Use any of the methods below, and I'll get back to you as soon as possible! So, what's your favorite color?</Blurb>
         <OptionsContainer>
-          <FormContainer>
+          {/* <FormContainer>
             <Title>send a message 📧</Title>
             <Form onSubmit={handleSubmit(onSubmit)}>
               <FormInput id="name" placeholder="name" {...register('name', { required: true })} />
@@ -212,18 +220,20 @@ export default function Contact() {
               
               <FormSend type="submit">Send</FormSend>
             </Form>
-          </FormContainer>
+          </FormContainer> */}
           <SocialsContainer>
-            <Title>or find me @ my socials 📱</Title>
-            {Assets.socials.map((social, index) => (
-              <SocialLink
-                href={social.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <social.icon />
-              </SocialLink>
-            ))}
+            <Title>find me @ my socials 📱</Title>
+            <SocialsLinkContainer>
+              {Assets.socials.map((social, index) => (
+                <SocialLink
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <social.icon />
+                </SocialLink>
+              ))}
+            </SocialsLinkContainer>
           </SocialsContainer>
         </OptionsContainer>
         <FinalText>Thanks for stopping by!</FinalText>
