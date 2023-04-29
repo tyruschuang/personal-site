@@ -1,5 +1,5 @@
-Personal site for Tyrus Chuang
-Developed by Tyrus Chuang, using ReactJS
+- Personal site for Tyrus Chuang
+- Developed using ReactJS
 
 ## ✨ View Live
 https://personal-site-2g6n.onrender.com/
