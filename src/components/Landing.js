@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { AiOutlineTwitter, AiOutlineGithub, AiTwotoneMail } from "react-icons/ai";
 
 const Container = styled.div`
-  transition: all 0.4s ease-in-out;
   height: 100vh;
   background-color: ${props => props.theme.primary[1]}};
   display: flex;
@@ -13,7 +12,6 @@ const Container = styled.div`
 `;
 
 const TextContainer = styled.div`
-  transition: all 0.4s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
