@@ -24,6 +24,14 @@ export const images = [
         title: "Angel",
     },
     {
+        image: require("../assets/images/jungle.png"),
+        title: "Jungle",
+    },
+    {
+        image: require("../assets/images/castle on a hill.png"),
+        title: "Castle on a Hill",
+    },
+    {
         image: require("../assets/images/arcane.png"),
         title: "Arcane",
     },
