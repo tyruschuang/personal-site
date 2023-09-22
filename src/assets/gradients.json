@@ -1,0 +1,114 @@
+[
+  {
+    "direction": "to right",
+    "colors": [
+      "#ff9a9e",
+      "#fad0c4"
+    ]
+  },
+  {
+    "direction": "to right",
+    "colors": [
+      "#faaca8",
+      "#ddd6f3"
+    ]
+  },
+  {
+    "direction": "to right",
+    "colors": [
+      "#43e97b",
+      "#38f9d7"
+    ]
+  },
+  {
+    "direction": "120deg",
+    "colors": [
+      "#84fab0",
+      "#8fd3f4"
+    ]
+  },
+  {
+    "direction": "120deg",
+    "colors": [
+      "#f093fb",
+      "#f5576c"
+    ]
+  },
+  {
+    "direction": "to right",
+    "colors": [
+      "#fa709a",
+      "#fee140"
+    ]
+  },
+  {
+    "direction": "135deg",
+    "colors": [
+      "#dcb0ed",
+      "#99c99c"
+    ]
+  },
+  {
+    "direction": "to right",
+    "colors": [
+      "#2af598",
+      "#009efd"
+    ]
+  },
+  {
+    "direction": "to left",
+    "colors": [
+      "#f3e7e9",
+      "#e3eeff"
+    ]
+  },
+  {
+    "direction": "to left",
+    "colors": [
+      "#c71d6f",
+      "#d09693"
+    ]
+  },
+  {
+    "direction": "to left",
+    "colors": [
+      "#96deda",
+      "#50c9c3"
+    ]
+  },
+  {
+    "direction": "to left",
+    "colors": [
+      "#6e45e2",
+      "#88d3ce"
+    ]
+  },
+  {
+    "direction": "to left",
+    "colors": [
+      "#93a5cf",
+      "#e4efe9"
+    ]
+  },
+  {
+    "direction": "to left",
+    "colors": [
+      "#ff0844",
+      "#ffb199"
+    ]
+  },
+  {
+    "direction": "to left",
+    "colors": [
+      "#d9afd9",
+      "#97d9e1"
+    ]
+  },
+  {
+    "direction": "to left",
+    "colors": [
+      "#9795f0",
+      "#fbc8d4"
+    ]
+  }
+]

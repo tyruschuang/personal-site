@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+:root {
+    --gradient: linear-gradient(90deg, rgba(0, 129, 255, 0.5), rgba(122, 0, 255, 0.5));
+}
+
+.space::before {
+    content: ' ';
+    white-space: pre;
+}
+
+@keyframes highlight {
+    from {
+        width: 0;
+    }
+    to {
+        width: 85%;
+    }
+}
+
+.offset-highlight::after {
+    z-index: -1;
+    content: ' ';
+    display: block;
+    width: 85%;
+    height: 50%;
+    bottom: 50%;
+    left: 25%;
+    position: relative;
+    background: var(--gradient);
+    animation: highlight 2s cubic-bezier(0.2, 0, 0.1, 1);
+    transition: all 0.5s cubic-bezier(0.2, 0, 0.1, 1);
+}
+
+.gradient-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
