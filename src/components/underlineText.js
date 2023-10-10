@@ -3,7 +3,7 @@ import {gradient} from "../assets/constants";
 import {theme} from "../theme";
 import {gradientString} from "../lib/gradient";
 
-export default function HighlightText(props) {
+export default function UnderlineText(props) {
 
     return (
         <Box className={props.class}
@@ -18,12 +18,10 @@ export default function HighlightText(props) {
                     content: '""',
                     display: "block",
                     width: "100%",
-                    height: "50%",
-                    bottom: "50%",
-                    left: "25px",
+                    height: "30%",
+                    bottom: "40%",
                     position: "relative",
                     background: gradientString,
-                    animation: "highlight 2s ease",
                 }
             }}
             >

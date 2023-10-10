@@ -4,6 +4,8 @@ import Page from "../page";
 import HighlightText from "../highlightText";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import {me} from "../../assets/constants";
+import UnderlineText from "../underlineText";
+import MiddlePageNav from "../middlePageNav";
 
 export default function Home() {
 
@@ -38,20 +40,32 @@ export default function Home() {
                             </Typography>
                         </FadeIn>
                     </Box>
-                    <Grid2 container>
+                    <Grid2 container spacing={4}>
                         <Grid2 xs={12} md={6}>
                             <Box sx={{}}>
-                                <FadeIn>
-                                    Welcome to my corner on the internet
+                                <FadeIn delay={500}>
+                                    Welcome to my corner on the internet!
+                                    <br/>
+                                    <br/>
+                                    I'm a high school student in the California Bay Area interested in studying computer science and business in college.
+                                    <br/>
+                                    <br/>
+                                    Currently working on College Apps
+                                    <br/>
+                                    <br/>
+                                    <MiddlePageNav/>
                                 </FadeIn>
                             </Box>
                         </Grid2>
                         <Grid2 xs={12} md={6}>
-                            {/*<FadeIn>*/}
-                            {/*    <Box component={"img"} src={me} sx={{*/}
-                            {/*            filter: "grayscale(100%)",*/}
-                            {/*    }} />*/}
-                            {/*</FadeIn>*/}
+                            <FadeIn delay={750}>
+                                <Box component={"img"} src={me} alt={"Me!"} sx={{
+                                    width: "100%",
+                                    filter: "grayscale()",
+                                    position: "relative",
+                                    top: {xs: 0, md: -225},
+                                }}/>
+                            </FadeIn>
                         </Grid2>
                     </Grid2>
                 </Box>

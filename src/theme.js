@@ -1,5 +1,6 @@
 import {blue, teal} from "@mui/material/colors";
 import {createTheme} from "@mui/material/styles";
+import {getGradient, getGradientString} from "./lib/gradient";
 
 export const theme = createTheme({
     palette: {

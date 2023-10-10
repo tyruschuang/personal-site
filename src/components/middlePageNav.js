@@ -1,6 +1,11 @@
-import {pages} from "../assets/constants";
 import {Box} from "@mui/material";
 import {useNavigate} from "react-router-dom";
+
+const pages = {
+    "view my art": "/art",
+    "check out my code": "/code",
+    "contact me": "/contact",
+}
 
 export default function MiddlePageNav(props) {
 
@@ -11,13 +16,13 @@ export default function MiddlePageNav(props) {
             {
                 Object.entries(pages).map(([key, value]) => (
                     <Box key={key} sx={{
-                        fontSize: 30,
                         display: "flex",
-                        justifyContent: "flex-end",
+                        justifyContent: "flex-start",
                         transition: "all 0.4s cubic-bezier(0.1, 1, 1.0, 0.9)",
+                        pb: 1,
 
                         "&:hover": {
-                            pr: 4,
+                            pl: 4,
                             cursor: "pointer",
                         }
                     }}

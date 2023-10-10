@@ -110,10 +110,3 @@ export const images = [
 ];
 
 export const me = require("../assets/me.jpg");
-
-export const getGradient = () => {
-    const gradient = gradients[Math.floor(Math.random() * gradients.length)];
-    return `linear-gradient(${gradient.direction}, ${gradient.colors.join(", ")})`;
-}
-
-export const gradient = getGradient();
