@@ -1,14 +1,39 @@
-import {Backdrop, Box, Container, Typography,} from "@mui/material";
-import {useState} from "react";
+import {Backdrop, Box, Container, Divider, Fade, Slide, Stack, Typography,} from "@mui/material";
+import {useState, useRef} from "react";
 import {pages} from "../assets/constants";
 import {useNavigate} from "react-router-dom";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import {slideup} from "../styles/transition";
 import {hover} from "../styles/hover";
 import Hamburger from 'hamburger-react';
+import useScrollLock from "../lib/scrollLock";
+import useHideHeader from "../lib/hideHeader";
+import FadeIn from "./fadeIn";
 
 function Header() {
+
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const {lockScroll, unlockScroll} = useScrollLock()
+    const {hideHeader, showHeader} = useHideHeader();
+
+    const handleOpen = (item) => {
+        setMenuOpen(true);
+        lockScroll();
+    }
+
+    const handleClose = () => {
+        setMenuOpen(false);
+        unlockScroll();
+    }
+
+    const toggle = () => {
+        if (menuOpen) {
+            handleClose();
+        } else {
+            handleOpen();
+        }
+    }
 
     const navigate = useNavigate()
 
@@ -46,63 +71,61 @@ function Header() {
                 <Box sx={{
                     display: {xs: "flex", md: "none"},
                     justifyContent: "space-between",
+                    zIndex: 50000,
                 }}>
-                    <Hamburger toggled={menuOpen} toggle={setMenuOpen}/>
+                    <Hamburger toggled={menuOpen} toggle={toggle}/>
                 </Box>
             </Box>
-            <Backdrop
-                open={Boolean(menuOpen)}
+            <Fade
+                in={menuOpen}
                 onClick={() => {
                     setMenuOpen(false);
                 }}
                 sx={{
-                    zIndex: (theme) => theme.zIndex.drawer + 1,
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100vw",
+                    height: "100vh",
+                    zIndex: 10000,
+                    backgroundColor: "#fff",
+                    justifyContent: "center",
+                    alignItems: "center",
                 }}
             >
-                <Grid2
-                    container
-                    spacing={3}
-                    justifyContent="center"
-                    alignItems="center"
-                >
-                    {Object.entries(pages).map((page, index) => (
-                        <Grid2
-                            justifyContent="center"
-                            alignItems="center"
-                            xs={4}
+                        <Stack
+                            direction={"column"}
                         >
-                            <Box
-                                key={`${page}-${menuOpen}`}
-                                onClick={() => setMenuOpen(false)}
-                                sx={{
-                                    ...slideup(index, menuOpen),
-                                }}
-                            >
-                                <Typography
-                                    textAlign="center"
-                                    fontSize={25}
+                    {Object.entries(pages).map((page, index) => (
+                            <FadeIn key={`${page}-${menuOpen}`} delay={200 + index * 100}>
+                                <Box
+                                    key={`${page}-${menuOpen}`}
+                                    onClick={() => setMenuOpen(false)}
                                 >
-                                    <Box
-                                        component="a"
-                                        sx={{
-                                            color: "inherit",
-                                            textDecoration: "none",
-                                            ...hover,
-                                        }}
-                                        href={`/${page}`}
+                                    <Typography
+                                        textAlign="center"
+                                        fontSize={25}
                                     >
-                                        {page.map((item) => (
-                                            <div>
-                                                {item}
-                                            </div>
-                                        ))}
-                                    </Box>
-                                </Typography>
-                            </Box>
-                        </Grid2>
+                                        <Box
+                                            component="a"
+                                            sx={{
+                                                color: "inherit",
+                                                textDecoration: "none",
+                                            }}
+                                            href={`${page[1]}`}
+                                        >
+                                            {page[0]}
+                                        </Box>
+                                    </Typography>
+                                    <Divider sx={{
+                                        mt: 0,
+                                        mb: 4,
+                                    }}/>
+                                </Box>
+                            </FadeIn>
                     ))}
-                </Grid2>
-            </Backdrop>
+                        </Stack>
+            </Fade>
         </Container>);
 }
 
