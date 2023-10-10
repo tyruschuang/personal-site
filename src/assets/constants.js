@@ -7,6 +7,13 @@ export const pages = {
     contact: "/contact",
 };
 
+export const socials = {
+    email: "mailto:businessomga@gmail.com",
+    twitter: "https://twitter.com/omgabuilds",
+    instagram: "https://instagram.com/omgabuilds",
+    github: "https://github.com/omegaladon",
+}
+
 export const projects = [
     {
         thumbnail: require("../assets/images/angel.png"),

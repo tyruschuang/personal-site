@@ -9,6 +9,7 @@ import './app.css'
 import Header from "./components/header";
 import Art from "./components/pages/art";
 import Code from "./components/pages/code";
+import Contact from "./components/pages/contact";
 
 function AppContent() {
 
@@ -21,7 +22,7 @@ function AppContent() {
                     <Route path="/" element={<Home/>}/>
                     <Route path="/art" element={<Art/>}/>
                     <Route path="/code" element={<Code/>}/>
-                    <Route path={"/contact"} element={<NotFound/>}/>
+                    <Route path={"/contact"} element={<Contact/>}/>
                 </Route>
             </Routes>
             <Footer/>

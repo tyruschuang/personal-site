@@ -1,13 +1,9 @@
 import {Box} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
-const pages = {
-    "view my art": "/art",
-    "check out my code": "/code",
-    "contact me": "/contact",
-}
-
 export default function MiddlePageNav(props) {
+
+    const { pages } = props;
 
     const navigate = useNavigate();
 
@@ -15,7 +11,9 @@ export default function MiddlePageNav(props) {
         <Box>
             {
                 Object.entries(pages).map(([key, value]) => (
-                    <Box key={key} sx={{
+                    <Box component={"a"} href={value} target={"_blank"} key={key} sx={{
+                        textDecoration: "none",
+                        color: "inherit",
                         display: "flex",
                         justifyContent: "flex-start",
                         transition: "all 0.4s cubic-bezier(0.1, 1, 1.0, 0.9)",
@@ -25,10 +23,7 @@ export default function MiddlePageNav(props) {
                             pl: 4,
                             cursor: "pointer",
                         }
-                    }}
-                         onClick={(event) => {
-                             navigate(value);
-                         }}>
+                    }}>
                         {key}
                     </Box>
                 ))
