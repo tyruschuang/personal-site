@@ -20,8 +20,16 @@ export const projects = [
 
 export const images = [
     {
-        image: require("../assets/images/angel.png"),
-        title: "Angel",
+        image: require("../assets/images/sunlight.png"),
+        title: "Sunlight",
+    },
+    {
+        image: require("../assets/images/whale boat.png"),
+        title: "Whale Boat",
+    },
+    {
+        image: require("../assets/images/recycled.png"),
+        title: "Recycled",
     },
     {
         image: require("../assets/images/jungle.png"),
@@ -34,6 +42,10 @@ export const images = [
     {
         image: require("../assets/images/arcane.png"),
         title: "Arcane",
+    },
+    {
+        image: require("../assets/images/f40.png"),
+        title: "F40",
     },
     {
         image: require("../assets/images/big oriental.png"),
@@ -104,8 +116,8 @@ export const images = [
         title: "Village",
     },
     {
-        image: require("../assets/images/whale boat.png"),
-        title: "Whale Boat",
+        image: require("../assets/images/angel.png"),
+        title: "Angel",
     },
 ];
 

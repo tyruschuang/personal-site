@@ -70,6 +70,7 @@ export default function Art() {
                             justifyContent: "center",
                             alignItems: "center",
                             height: "95vh",
+                            maxWidth: "95vw",
                             userSelect: "none",
                         }}
                     />
