@@ -1,5 +1,3 @@
-const gradients = require("./gradients.json");
-
 export const pages = {
     about: "/",
     art: "/art",

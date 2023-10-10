@@ -1,4 +1,4 @@
-import {Backdrop, Box, Container, ImageList, ImageListItem} from "@mui/material";
+import {Backdrop, Box, Container, ImageList, ImageListItem, useMediaQuery} from "@mui/material";
 import Page from "../page";
 import {images} from "../../assets/constants";
 import {useState} from "react";
@@ -28,6 +28,8 @@ export default function Art() {
         showHeader();
     }
 
+    const matches = useMediaQuery((theme) => theme.breakpoints.up('md'));
+
     return (
         <Page>
             <Container maxWidth={"xl"}
@@ -36,7 +38,7 @@ export default function Art() {
                            filter: (open ? "blur(20px)" : ""),
                            transition: "all 0.4s cubic-bezier(0.1, 1, 1.0, 0.9)",
                        }}>
-                <ImageList variant={"masonry"} cols={{ xs: 1, md: 2 }} gap={8}>
+                <ImageList variant={"masonry"} cols={(matches ? 2 : 1)} gap={8}>
                     {images.map((item, index) => (
                         <ImageListItem key={item.title} sx={{
                             cursor: "pointer",

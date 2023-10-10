@@ -1,7 +1,10 @@
-import {Box, Container,} from "@mui/material";
+import {Backdrop, Box, Container, Typography,} from "@mui/material";
 import {useState} from "react";
 import {pages} from "../assets/constants";
 import {useNavigate} from "react-router-dom";
+import Grid2 from "@mui/material/Unstable_Grid2";
+import {slideup} from "../styles/transition";
+import {hover} from "../styles/hover";
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -37,55 +40,59 @@ function Header() {
                     </Box>)}
                 </Box>
             </Box>
-            {/*<Backdrop*/}
-            {/*    open={Boolean(menuOpen)}*/}
-            {/*    onClick={() => {*/}
-            {/*        setMenuOpen(false);*/}
-            {/*    }}*/}
-            {/*    sx={{*/}
-            {/*        zIndex: (theme) => theme.zIndex.drawer + 1,*/}
-            {/*    }}*/}
-            {/*>*/}
-            {/*    <Grid2*/}
-            {/*        container*/}
-            {/*        spacing={3}*/}
-            {/*        justifyContent="center"*/}
-            {/*        alignItems="center"*/}
-            {/*    >*/}
-            {/*{pages.map((page, index) => (*/}
-            {/*    <Grid2*/}
-            {/*        justifyContent="center"*/}
-            {/*        alignItems="center"*/}
-            {/*        xs={4}*/}
-            {/*    >*/}
-            {/*        <Box*/}
-            {/*            key={`${page}-${menuOpen}`}*/}
-            {/*            onClick={() => setMenuOpen(false)}*/}
-            {/*            sx={{*/}
-            {/*                ...slideup(index, menuOpen),*/}
-            {/*            }}*/}
-            {/*        >*/}
-            {/*            <Typography*/}
-            {/*                textAlign="center"*/}
-            {/*                fontSize={25}*/}
-            {/*            >*/}
-            {/*                <Box*/}
-            {/*                    component="a"*/}
-            {/*                    sx={{*/}
-            {/*                        color: "inherit",*/}
-            {/*                        textDecoration: "none",*/}
-            {/*                        ...hover,*/}
-            {/*                    }}*/}
-            {/*                    href={`/${page.toLowerCase()}`}*/}
-            {/*                >*/}
-            {/*                    {page}*/}
-            {/*                </Box>*/}
-            {/*            </Typography>*/}
-            {/*        </Box>*/}
-            {/*    </Grid2>*/}
-            {/*))}*/}
-            {/*    </Grid2>*/}
-            {/*</Backdrop>*/}
+            <Backdrop
+                open={Boolean(menuOpen)}
+                onClick={() => {
+                    setMenuOpen(false);
+                }}
+                sx={{
+                    zIndex: (theme) => theme.zIndex.drawer + 1,
+                }}
+            >
+                <Grid2
+                    container
+                    spacing={3}
+                    justifyContent="center"
+                    alignItems="center"
+                >
+            {Object.entries(pages).map((page, index) => (
+                <Grid2
+                    justifyContent="center"
+                    alignItems="center"
+                    xs={4}
+                >
+                    <Box
+                        key={`${page}-${menuOpen}`}
+                        onClick={() => setMenuOpen(false)}
+                        sx={{
+                            ...slideup(index, menuOpen),
+                        }}
+                    >
+                        <Typography
+                            textAlign="center"
+                            fontSize={25}
+                        >
+                            <Box
+                                component="a"
+                                sx={{
+                                    color: "inherit",
+                                    textDecoration: "none",
+                                    ...hover,
+                                }}
+                                href={`/${page}`}
+                            >
+                                {page.map((item) => (
+                                    <div>
+                                        {item}
+                                    </div>
+                                ))}
+                            </Box>
+                        </Typography>
+                    </Box>
+                </Grid2>
+            ))}
+                </Grid2>
+            </Backdrop>
         </Container>);
 }
 

@@ -1,5 +1,5 @@
-import {Box} from "@mui/material";
 import {gradientString} from "../lib/gradient";
+import {Box} from "@mui/material";
 
 export default function UnderlineText(props) {
 

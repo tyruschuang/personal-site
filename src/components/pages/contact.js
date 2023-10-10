@@ -1,10 +1,7 @@
-import {Backdrop, Box, Container, ImageList, ImageListItem, Typography} from "@mui/material";
+import {Box, Container, Typography} from "@mui/material";
 import Page from "../page";
-import {images, socials} from "../../assets/constants";
-import {useState} from "react";
+import {socials} from "../../assets/constants";
 import FadeIn from "../fadeIn";
-import useScrollLock from "../../lib/scrollLock";
-import useHideHeader from "../../lib/hideHeader";
 import HighlightText from "../highlightText";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import MiddlePageNav from "../middlePageNav";
@@ -26,8 +23,7 @@ export default function Contact() {
                     <Box>
                         <FadeIn>
                             <Typography component={"p"} display={"flex"} sx={{
-                                fontSize: {xs: 40, md: 60},
-                                whiteSpace: "pre",
+                                fontSize: {xs: 40, md: 60}
                             }}>
                                 Want to get in touch?
                             </Typography>

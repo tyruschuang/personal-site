@@ -1,6 +1,4 @@
 import {Box} from "@mui/material";
-import {gradient} from "../assets/constants";
-import {theme} from "../theme";
 import {gradientString} from "../lib/gradient";
 
 export default function HighlightText(props) {

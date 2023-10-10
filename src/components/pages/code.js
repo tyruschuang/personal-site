@@ -1,34 +1,9 @@
-import {Backdrop, Box, Container, Divider, ImageList, ImageListItem, Stack, Typography} from "@mui/material";
+import {Box, Container, Stack, Typography} from "@mui/material";
 import Page from "../page";
-import {images, projects} from "../../assets/constants";
-import {useCallback, useState} from "react";
-import FadeIn from "../fadeIn";
-import useScrollLock from "../../lib/scrollLock";
-import useHideHeader from "../../lib/hideHeader";
+import {projects} from "../../assets/constants";
 import Grid2 from "@mui/material/Unstable_Grid2";
-import UnderlineText from "../underlineText";
 
 export default function Code() {
-
-    const [selectedProject, setSelectedProject] = useState({});
-    const [open, setOpen] = useState(false);
-
-    const { lockScroll, unlockScroll } = useScrollLock()
-    const { hideHeader, showHeader } = useHideHeader();
-
-    const handleOpen = (item) => {
-        setSelectedProject(item);
-        setOpen(true);
-        lockScroll();
-        hideHeader();
-    }
-
-    const handleClose = () => {
-        setOpen(false);
-        setSelectedProject({});
-        unlockScroll();
-        showHeader();
-    }
 
     function Project(props) {
 
@@ -87,12 +62,7 @@ export default function Code() {
 
     return (
         <Page>
-            <Container maxWidth={"xl"}
-                       sx={{
-                           position: "relative",
-                           filter: (open ? "blur(20px)" : ""),
-                           transition: "all 0.4s cubic-bezier(0.1, 1, 1.0, 0.9)",
-                       }}>
+            <Container maxWidth={"xl"}>
                 <Grid2 container gap={8}>
                     {projects.map((project, index) => {
                         if (project.full) {
@@ -107,15 +77,6 @@ export default function Code() {
                     })}
                 </Grid2>
             </Container>
-            <Backdrop
-                open={open}
-                handleClose={handleClose}
-                onClick={handleClose}
-            >
-                <FadeIn>
-                    <Project project={selectedProject} />
-                </FadeIn>
-            </Backdrop>
         </Page>
     );
 }
