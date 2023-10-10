@@ -19,7 +19,7 @@ export default function Home() {
                 <Box sx={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: {xs: 8, md: 15},
+                    gap: {xs: 8, md: 10},
                 }}>
                     {/* Landing text */}
                     <Box>
@@ -41,7 +41,7 @@ export default function Home() {
                         </FadeIn>
                     </Box>
                     <Grid2 container spacing={4}>
-                        <Grid2 xs={12} md={6}>
+                        <Grid2 xs={12} md={8}>
                             <Box sx={{}}>
                                 <FadeIn delay={500}>
                                     Welcome to my corner on the internet!
@@ -50,22 +50,9 @@ export default function Home() {
                                     I'm a high school student in the California Bay Area interested in studying computer science and business in college.
                                     <br/>
                                     <br/>
-                                    Currently working on College Apps
-                                    <br/>
-                                    <br/>
-                                    <MiddlePageNav/>
+                                    Currently working on College Apps 😭
                                 </FadeIn>
                             </Box>
-                        </Grid2>
-                        <Grid2 xs={12} md={6}>
-                            <FadeIn delay={750}>
-                                <Box component={"img"} src={me} alt={"Me!"} sx={{
-                                    width: "100%",
-                                    filter: "grayscale()",
-                                    position: "relative",
-                                    top: {xs: 0, md: -225},
-                                }}/>
-                            </FadeIn>
                         </Grid2>
                     </Grid2>
                 </Box>

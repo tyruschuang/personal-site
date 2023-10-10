@@ -9,12 +9,13 @@ function Header() {
     const navigate = useNavigate()
 
     return (
-        <Container maxWidth="xl" id={"header"} sx={{
-            my: 5,
-            mb: 5,
-        }}>
+        <Container maxWidth="xl" id={"header"}>
             <Box sx={{
-                display: "flex", justifyContent: "flex-end", alignItems: "center", py: 3,
+                display: "flex",
+                justifyContent: "flex-end",
+                alignItems: "center",
+                pt: 15,
+                pb: 3,
             }}>
                 <Box sx={{
                     display: "flex",
