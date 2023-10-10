@@ -7,23 +7,6 @@ import {me} from "../../assets/constants";
 
 export default function Home() {
 
-    const images = [
-        [
-            {
-                image: require("../../assets/images/whale boat.png"),
-                title: "Whale Boat",
-            },
-            {
-                image: require("../../assets/images/industrial.png"),
-                title: "Industrial",
-            },
-            {
-                image: require("../../assets/images/big oriental.png"),
-                title: "Oriental",
-            }
-        ]
-    ]
-
     return (
         <Page>
             <Container maxWidth={"xl"}
@@ -64,11 +47,11 @@ export default function Home() {
                             </Box>
                         </Grid2>
                         <Grid2 xs={12} md={6}>
-                            <FadeIn>
-                                <Box component={"img"} src={me} sx={{
-                                        filter: "grayscale(100%)",
-                                }} />
-                            </FadeIn>
+                            {/*<FadeIn>*/}
+                            {/*    <Box component={"img"} src={me} sx={{*/}
+                            {/*            filter: "grayscale(100%)",*/}
+                            {/*    }} />*/}
+                            {/*</FadeIn>*/}
                         </Grid2>
                     </Grid2>
                 </Box>
