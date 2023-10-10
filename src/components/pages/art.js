@@ -11,8 +11,8 @@ export default function Art() {
     const [selectedImage, setSelectedImage] = useState({});
     const [open, setOpen] = useState(false);
 
-    const { lockScroll, unlockScroll } = useScrollLock()
-    const { hideHeader, showHeader } = useHideHeader();
+    const {lockScroll, unlockScroll} = useScrollLock()
+    const {hideHeader, showHeader} = useHideHeader();
 
     const handleOpen = (item) => {
         setSelectedImage(item);
@@ -44,14 +44,14 @@ export default function Art() {
                             cursor: "pointer",
                             userSelect: "none",
                         }}>
-                                <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    loading={"lazy"}
-                                    onClick={() => {
-                                        handleOpen(item);
-                                    }}
-                                />
+                            <img
+                                src={item.image}
+                                alt={item.title}
+                                loading={"lazy"}
+                                onClick={() => {
+                                    handleOpen(item);
+                                }}
+                            />
                         </ImageListItem>
                     ))}
                 </ImageList>

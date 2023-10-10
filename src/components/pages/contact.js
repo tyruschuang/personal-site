@@ -33,7 +33,8 @@ export default function Contact() {
                                 sx={{
                                     fontSize: {xs: 25, md: 35},
                                 }}>
-                                Contact me for commissions, collaborations, or <HighlightText>just to say hi</HighlightText>!
+                                Contact me for commissions, collaborations, or <HighlightText>just to say
+                                hi</HighlightText>!
                             </Typography>
                         </FadeIn>
                     </Box>

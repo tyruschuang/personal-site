@@ -25,7 +25,7 @@ export default function Footer() {
 
     const pairs = array.reduce(function (pairs, item, index) {
         return (index % 2 === 0 ? pairs.push([item])
-            : pairs[pairs.length-1].push(item)) && pairs;
+            : pairs[pairs.length - 1].push(item)) && pairs;
     }, []);
 
     return (
@@ -62,7 +62,7 @@ export default function Footer() {
                                         {index < pair.length - 1 && " / "}
                                     </React.Fragment>
                                 ))}
-                                {pairIndex < pairs.length - 1 && <br />}
+                                {pairIndex < pairs.length - 1 && <br/>}
                             </>
                         ))}
                     </Typography>

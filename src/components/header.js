@@ -35,9 +35,9 @@ function Header() {
                             cursor: "pointer",
                         }
                     }}
-                                                                                         onClick={(event) => {
-                                                                                             navigate(value);
-                                                                                         }}>
+                                                                      onClick={(event) => {
+                                                                          navigate(value);
+                                                                      }}>
                         {key}
                     </Box>)}
                 </Box>
@@ -47,7 +47,7 @@ function Header() {
                     display: {xs: "flex", md: "none"},
                     justifyContent: "space-between",
                 }}>
-                    <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
+                    <Hamburger toggled={menuOpen} toggle={setMenuOpen}/>
                 </Box>
             </Box>
             <Backdrop
@@ -65,42 +65,42 @@ function Header() {
                     justifyContent="center"
                     alignItems="center"
                 >
-            {Object.entries(pages).map((page, index) => (
-                <Grid2
-                    justifyContent="center"
-                    alignItems="center"
-                    xs={4}
-                >
-                    <Box
-                        key={`${page}-${menuOpen}`}
-                        onClick={() => setMenuOpen(false)}
-                        sx={{
-                            ...slideup(index, menuOpen),
-                        }}
-                    >
-                        <Typography
-                            textAlign="center"
-                            fontSize={25}
+                    {Object.entries(pages).map((page, index) => (
+                        <Grid2
+                            justifyContent="center"
+                            alignItems="center"
+                            xs={4}
                         >
                             <Box
-                                component="a"
+                                key={`${page}-${menuOpen}`}
+                                onClick={() => setMenuOpen(false)}
                                 sx={{
-                                    color: "inherit",
-                                    textDecoration: "none",
-                                    ...hover,
+                                    ...slideup(index, menuOpen),
                                 }}
-                                href={`/${page}`}
                             >
-                                {page.map((item) => (
-                                    <div>
-                                        {item}
-                                    </div>
-                                ))}
+                                <Typography
+                                    textAlign="center"
+                                    fontSize={25}
+                                >
+                                    <Box
+                                        component="a"
+                                        sx={{
+                                            color: "inherit",
+                                            textDecoration: "none",
+                                            ...hover,
+                                        }}
+                                        href={`/${page}`}
+                                    >
+                                        {page.map((item) => (
+                                            <div>
+                                                {item}
+                                            </div>
+                                        ))}
+                                    </Box>
+                                </Typography>
                             </Box>
-                        </Typography>
-                    </Box>
-                </Grid2>
-            ))}
+                        </Grid2>
+                    ))}
                 </Grid2>
             </Backdrop>
         </Container>);

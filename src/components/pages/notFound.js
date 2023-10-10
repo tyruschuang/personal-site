@@ -13,17 +13,17 @@ export default function NotFound() {
                            display: "flex",
                            alignItems: "center",
                        }}>
-                    <Box>
-                        <FadeIn>
-                            <Typography component={"p"} sx={{
-                                fontSize: {xs: 40, md: 60},
-                                py: 15,
-                                display: "flex",
-                            }}>
-                                I searched far and wide, but couldn't find what you were looking for 😭
-                            </Typography>
-                        </FadeIn>
-                    </Box>
+                <Box>
+                    <FadeIn>
+                        <Typography component={"p"} sx={{
+                            fontSize: {xs: 40, md: 60},
+                            py: 15,
+                            display: "flex",
+                        }}>
+                            I searched far and wide, but couldn't find what you were looking for 😭
+                        </Typography>
+                    </FadeIn>
+                </Box>
             </Container>
         </Page>
     );

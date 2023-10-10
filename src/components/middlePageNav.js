@@ -2,7 +2,7 @@ import {Box} from "@mui/material";
 
 export default function MiddlePageNav(props) {
 
-    const { pages } = props;
+    const {pages} = props;
 
     return (
         <Box>
