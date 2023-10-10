@@ -2,7 +2,7 @@ import {Backdrop, Box, Container, ImageList, ImageListItem, useMediaQuery} from 
 import Page from "../page";
 import {images} from "../../assets/constants";
 import {useState} from "react";
-import FadeIn from "../fadeIn";
+import FadeIn from "../../lib/fadeIn";
 import useScrollLock from "../../lib/scrollLock";
 import useHideHeader from "../../lib/hideHeader";
 

@@ -1,5 +1,5 @@
 import {Box, Container, Typography} from "@mui/material";
-import FadeIn from "../fadeIn";
+import FadeIn from "../../lib/fadeIn";
 import Page from "../page";
 
 export default function NotFound() {

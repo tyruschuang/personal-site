@@ -1,7 +1,7 @@
-import {gradientString} from "../lib/gradient";
 import {Box} from "@mui/material";
+import {gradientString} from "./gradient";
 
-export default function UnderlineText(props) {
+export default function HighlightText(props) {
 
     return (
         <Box className={props.class}
@@ -16,10 +16,12 @@ export default function UnderlineText(props) {
                     content: '""',
                     display: "block",
                     width: "100%",
-                    height: "30%",
-                    bottom: "40%",
+                    height: "50%",
+                    bottom: "50%",
+                    left: "25px",
                     position: "relative",
                     background: gradientString,
+                    animation: "highlight 2s ease",
                 }
             }}
             >

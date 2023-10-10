@@ -1,7 +1,7 @@
 import {Box, Container, Typography} from "@mui/material";
-import FadeIn from "../fadeIn";
+import FadeIn from "../../lib/fadeIn";
 import Page from "../page";
-import HighlightText from "../highlightText";
+import HighlightText from "../../lib/highlightText";
 import Grid2 from "@mui/material/Unstable_Grid2";
 
 export default function Home() {

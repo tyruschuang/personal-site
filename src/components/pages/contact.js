@@ -1,8 +1,8 @@
 import {Box, Container, Typography} from "@mui/material";
 import Page from "../page";
 import {socials} from "../../assets/constants";
-import FadeIn from "../fadeIn";
-import HighlightText from "../highlightText";
+import FadeIn from "../../lib/fadeIn";
+import HighlightText from "../../lib/highlightText";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import MiddlePageNav from "../middlePageNav";
 
