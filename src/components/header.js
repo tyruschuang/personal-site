@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import {slideup} from "../styles/transition";
 import {hover} from "../styles/hover";
+import Hamburger from 'hamburger-react';
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -20,8 +21,9 @@ function Header() {
                 pt: 15,
                 pb: 3,
             }}>
+                {/* Regular nav */}
                 <Box sx={{
-                    display: "flex",
+                    display: {xs: "none", md: "flex"},
                     justifyContent: "space-between",
                     alignItems: "center",
                     gap: 7,
@@ -38,6 +40,14 @@ function Header() {
                                                                                          }}>
                         {key}
                     </Box>)}
+                </Box>
+
+                {/* Mobile nav */}
+                <Box sx={{
+                    display: {xs: "flex", md: "none"},
+                    justifyContent: "space-between",
+                }}>
+                    <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
                 </Box>
             </Box>
             <Backdrop
