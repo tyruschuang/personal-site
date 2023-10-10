@@ -5,7 +5,7 @@ import {useState} from "react";
 import FadeIn from "../../lib/fadeIn";
 import useScrollLock from "../../lib/scrollLock";
 import useHideHeader from "../../lib/hideHeader";
-import {LazyLoadImage} from "react-lazy-load-image-component/src";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function Art() {
 
@@ -48,7 +48,6 @@ export default function Art() {
                             <LazyLoadImage
                                 src={item.image}
                                 alt={item.title}
-                                effect="blur"
                                 onClick={() => {
                                     handleOpen(item);
                                 }}
