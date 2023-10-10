@@ -19,9 +19,8 @@ export default function NotFound() {
                                 fontSize: {xs: 40, md: 60},
                                 py: 15,
                                 display: "flex",
-whiteSpace: "pre",
                             }}>
-                                I searched far and wide, <br/>but couldn't find what you were looking for.
+                                I searched far and wide, but couldn't find what you were looking for 😭
                             </Typography>
                         </FadeIn>
                     </Box>
