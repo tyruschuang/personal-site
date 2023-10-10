@@ -3,9 +3,10 @@ import Page from "../page";
 import {images, projects} from "../../assets/constants";
 import {useCallback, useState} from "react";
 import FadeIn from "../fadeIn";
-import useScrollLock from "../../assets/scrollLock";
-import useHideHeader from "../../assets/hideHeader";
+import useScrollLock from "../../lib/scrollLock";
+import useHideHeader from "../../lib/hideHeader";
 import Grid2 from "@mui/material/Unstable_Grid2";
+import UnderlineText from "../underlineText";
 
 export default function Code() {
 
@@ -64,16 +65,18 @@ export default function Code() {
                         }}>
                             {project.title}
                         </Typography>
-                        <Typography sx={{
-                            color: "text.secondary",
-                            fontSize: 20,
-                        }}>
-                            {project.tags.join(", ")}
-                        </Typography>
+                        {/*<Typography sx={{*/}
+                        {/*    color: "text.secondary",*/}
+                        {/*    fontFamily: "Roboto",*/}
+                        {/*    fontSize: 20,*/}
+                        {/*}}>*/}
+                        {/*        {project.tags.join(", ")}*/}
+                        {/*</Typography>*/}
                     </Stack>
                     <Typography sx={{
                         color: "text.secondary",
-                        fontSize: 20,
+                        fontFamily: "Roboto",
+                        fontSize: 25,
                     }}>
                         {project.description}
                     </Typography>
