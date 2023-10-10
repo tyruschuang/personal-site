@@ -3,9 +3,6 @@ import FadeIn from "../fadeIn";
 import Page from "../page";
 import HighlightText from "../highlightText";
 import Grid2 from "@mui/material/Unstable_Grid2";
-import {me} from "../../assets/constants";
-import UnderlineText from "../underlineText";
-import MiddlePageNav from "../middlePageNav";
 
 export default function Home() {
 

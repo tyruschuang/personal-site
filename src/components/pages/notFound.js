@@ -1,11 +1,6 @@
-import {Box, Container, Divider, Typography} from "@mui/material";
+import {Box, Container, Typography} from "@mui/material";
 import FadeIn from "../fadeIn";
-import {useNavigate} from "react-router-dom";
-import MiddlePageNav from "../middlePageNav";
-import ButtonText from "../buttonText";
 import Page from "../page";
-import HighlightText from "../highlightText";
-import Grid2 from "@mui/material/Unstable_Grid2";
 
 export default function NotFound() {
 

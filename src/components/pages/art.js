@@ -1,7 +1,7 @@
 import {Backdrop, Box, Container, ImageList, ImageListItem} from "@mui/material";
 import Page from "../page";
 import {images} from "../../assets/constants";
-import {useCallback, useState} from "react";
+import {useState} from "react";
 import FadeIn from "../fadeIn";
 import useScrollLock from "../../assets/scrollLock";
 import useHideHeader from "../../assets/hideHeader";
@@ -36,7 +36,7 @@ export default function Art() {
                            filter: (open ? "blur(20px)" : ""),
                            transition: "all 0.4s cubic-bezier(0.1, 1, 1.0, 0.9)",
                        }}>
-                <ImageList variant={"masonry"} cols={2} gap={8}>
+                <ImageList variant={"masonry"} cols={{ xs: 1, md: 2 }} gap={8}>
                     {images.map((item, index) => (
                         <ImageListItem key={item.title} sx={{
                             cursor: "pointer",
@@ -69,7 +69,7 @@ export default function Art() {
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
-                            height: "95vh",
+                            maxHeight: "95vh",
                             maxWidth: "95vw",
                             userSelect: "none",
                         }}
