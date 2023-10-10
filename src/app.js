@@ -28,7 +28,7 @@ function AppContent() {
     );
 }
 
-export default function Temp() {
+export default function App() {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline/>
