@@ -47,7 +47,7 @@ export default function Home() {
                                 science and business in college.
                                 <br/>
                                 <br/>
-                                Currently working on College Apps 😭
+                                Currently working on College Apps
                             </FadeIn>
                         </Grid2>
                     </Grid2>
