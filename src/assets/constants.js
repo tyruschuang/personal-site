@@ -29,6 +29,10 @@ export const images = [
         title: "Sunlight",
     },
     {
+        image: require("../assets/images/midnight.png"),
+        title: "Midnight",
+    },
+    {
         image: require("../assets/images/whale boat.png"),
         title: "Whale Boat",
     },
@@ -43,6 +47,14 @@ export const images = [
     {
         image: require("../assets/images/castle on a hill.png"),
         title: "Castle on a Hill",
+    },
+    {
+        image: require("../assets/images/forgotten cave.png"),
+        title: "Forgotten Cave",
+    },
+    {
+        image: require("../assets/images/valley.png"),
+        title: "Valley",
     },
     {
         image: require("../assets/images/arcane.png"),
@@ -65,6 +77,10 @@ export const images = [
         title: "Natural Rigidity",
     },
     {
+        image: require("../assets/images/cloudy keep.png"),
+        title: "Cloudy Keep",
+    },
+    {
         image: require("../assets/images/castle 2.png"),
         title: "Sunrise",
     },
@@ -75,6 +91,10 @@ export const images = [
     {
         image: require("../assets/images/cyber.png"),
         title: "Dark",
+    },
+    {
+        image: require("../assets/images/contemplation.png"),
+        title: "Contemplation",
     },
     {
         image: require("../assets/images/fishing in the clouds.png"),
@@ -111,6 +131,10 @@ export const images = [
     {
         image: require("../assets/images/seahorse.png"),
         title: "Seahorse",
+    },
+    {
+        image: require("../assets/images/midday.png"),
+        title: "Midday",
     },
     {
         image: require("../assets/images/twist.png"),
