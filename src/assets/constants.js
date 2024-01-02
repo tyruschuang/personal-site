@@ -1,7 +1,7 @@
 export const pages = {
     about: "/",
     art: "/art",
-    code: "/code",
+    // code: "/code",
     contact: "/contact",
 };
 
