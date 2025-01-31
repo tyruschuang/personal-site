@@ -43,11 +43,7 @@ export default function Home() {
                                 Welcome to my corner on the internet!
                                 <br/>
                                 <br/>
-                                I'm a high school student in the California Bay Area interested in studying computer
-                                science and business in college.
-                                <br/>
-                                <br/>
-                                Currently working on College Apps
+                                I'm a student studying Computer Science and Business Administration at Northeastern University.
                             </FadeIn>
                         </Grid2>
                     </Grid2>
