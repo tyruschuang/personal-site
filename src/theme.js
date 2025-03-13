@@ -1,12 +1,12 @@
-import {blue, teal} from "@mui/material/colors";
+import {blueGrey, teal} from "@mui/material/colors";
 import {createTheme} from "@mui/material/styles";
 
 export const theme = createTheme({
     palette: {
         contrastThreshold: 4.5,
-        mode: "light",
+        mode: "dark",
 
-        primary: blue,
+        primary: blueGrey,
         secondary: teal,
 
         white: {
@@ -15,10 +15,10 @@ export const theme = createTheme({
     },
 
     typography: {
-        fontSize: 30,
+        fontSize: 24,
 
         fontFamily: [
-            'Lora',
+            'Open Sans',
         ],
     }
 });
