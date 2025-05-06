@@ -22,11 +22,16 @@ function ExperienceSection(props) {
                         </Typography>
                     </Stack>
                     <Divider sx={{
-                        my: 1,
+                        my: 0.5,
                     }}/>
-                    <Typography fontSize={{xs: 12, md: 16}}>
-                        {props.description}
-                    </Typography>
+                    <Stack direction={"column"} gap={1}>
+                        {props.description.map((line, index) => (
+                                <Typography key={index} fontSize={{xs: 10, md: 14}}
+                                            sx={{whiteSpace: 'pre-line'}}>
+                                    {line}
+                                </Typography>
+                        ))}
+                    </Stack>
                 </Grid2>
             </Grid2>
         </Stack>
@@ -35,7 +40,7 @@ function ExperienceSection(props) {
 
 export default function Experience() {
     return (
-        <Stack id={"experience"} direction={"column"} gap={2} sx={{
+        <Stack id={"experience"} direction={"column"} gap={3} sx={{
             pt: {xs: 4, md: 6},
             zIndex: 1,
         }}>

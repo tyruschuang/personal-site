@@ -16,19 +16,44 @@ export const pages =
         }}/>
     }
 
-export const socials = {
-    email: "mailto:businessomga@gmail.com",
-    twitter: "https://twitter.com/omgabuilds",
-    instagram: "https://instagram.com/omgabuilds",
-    github: "https://github.com/omegaladon",
-}
-
 export const experience = [
     {
-        dates: "May 2021 - August 2021",
-        company: "Company",
-        title: "Software Engineer Intern",
-        description: "Developed a full stack web application for a client using React, Node.js, and MongoDB."
+        dates: "02/2025 - Present",
+        company: "Voulay",
+        title: "Full Stack Intern",
+        description:
+            ["Collaborated with development team on Voulay's innovative Living Discount platform, a technology that connects e-commerce businesses with customers through dynamic discount systems.",
+            "Designed and developed Firebase/Node.js infrastructure to process user voting blocks, triggering automated workflows for brand promotion.",
+            "Built a secure and scalable API to handle user votes, discount allocation, and engagement metrics."]
+    },
+    {
+        dates: "02/2025 - 05/2025",
+        company: "American Dog Society",
+        title: "Full Stack Intern",
+        description:
+            ["Spearheaded the design and development of a mobile-first UI for the organization's upcoming application.",
+            "Designed and developed 5+ responsive pages following accessibility standards (WCAG 2.1 AA).",
+            "Served as the critical bridge between frontend and backend development teams, facilitating efficient collaboration and streamlining development workflows.",
+            "Established and implemented standardized development practices, including Git version control workflows and Figma component libraries, which significantly improved team collaboration and reduced redundant work."]
+    },
+    {
+        dates: "04/2023 - 08/2023",
+        company: "StylHaus",
+        title: "Full Stack Intern",
+        description:
+            ["Facilitated the design and development of a responsive, user friendly web platforms using WordPress and PHP.",
+            "Gained hands-on experience in front-end and back-end development, troubleshooting, and optimizing websites for speed and functionality."]
+    },
+    {
+        dates: "12/2020 - 10/2024",
+        company: "Self-employed",
+        title: "Game Developer",
+        description:
+            ["Founded and led teams of up to 20 developers and moderators in creating and managing profitable Minecraft gaming experiences.",
+            "Developed 10+ custom Minecraft games, with the most popular server averaging 70 concurrent players.",
+            "Generated $20,000 in profit through strategic monetization while maintaining player satisfaction.",
+            "Engineered custom core plugins using Java and Kotlin to create unique gameplay mechanics and features.",
+            "Managed all operational aspects including community engagement and player retention strategies, technical infrastructure and performance optimization, server maintenance and troubleshooting, and team coordination and project management."]
     }
 ]
 
