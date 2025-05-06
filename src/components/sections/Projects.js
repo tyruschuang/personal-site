@@ -11,10 +11,12 @@ function ProjectSection(props) {
         }}>
             <Stack direction={"column"} gap={2} sx={{
                 p: 3
+            }} onClick={() => {
+                window.open(props.link, "_blank");
             }}>
                 <Box component={"img"} src={props.thumbnail} alt={props.title} sx={{
                     width: "100%",
-                    height: 400,
+                    height: "100%",
                     objectFit: "cover",
                     borderRadius: 4,
                 }}/>

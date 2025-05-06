@@ -62,7 +62,21 @@ export const projects = [
         thumbnail: require("../assets/projects/personal site.png"),
         title: "Personal Site",
         description: "This site! Built with React, MUI, and Vercel.",
-        link: "",
-        technologies: ["React", "MUI", "Vercel"]
+        link: "https://tyrus-chuang.vercel.app/",
+        technologies: ["ReactJS", "MUI", "Vercel"]
+    },
+    {
+        thumbnail: require("../assets/projects/torch.png"),
+        title: "Torch",
+        description: "A Minecraft server query tool featuring a responsive UI, efficient caching systems, and a public RESTful API.",
+        link: "https://torch.onrender.com/",
+        technologies: ["ReactJS", "MUI", "Render", "GoLang"]
+    },
+    {
+        thumbnail: require("../assets/projects/scouting app.png"),
+        title: "972 Scouting App",
+        description: "The 972 Iron Claw Robotics scouting app for the 2024 FIRST Robotics Competition.",
+        link: "https://scouting-app-2024.onrender.com/",
+        technologies: ["ReactJS", "MUI", "Render", "Firebase", "NoSQL"]
     }
 ]
