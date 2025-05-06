@@ -26,10 +26,10 @@ function ExperienceSection(props) {
                     }}/>
                     <Stack direction={"column"} gap={1}>
                         {props.description.map((line, index) => (
-                                <Typography key={index} fontSize={{xs: 10, md: 14}}
-                                            sx={{whiteSpace: 'pre-line'}}>
-                                    {line}
-                                </Typography>
+                            <Typography key={index} fontSize={{xs: 10, md: 14}}
+                                        sx={{whiteSpace: 'pre-line'}}>
+                                {line}
+                            </Typography>
                         ))}
                     </Stack>
                 </Grid2>
